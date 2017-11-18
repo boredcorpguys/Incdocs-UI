@@ -3,3 +3,11 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 250%;
   }
+
+  body {
+    height: 55.5em;
+  }
+
+ .main_content {
+   height : 100% !important;
+ }

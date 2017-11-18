@@ -1,0 +1,23 @@
+.icon-large{
+    font-size:12em !important;
+}
+
+.homePageActionsDiv {
+    position: relative;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    /* border: 1px solid red; */
+    margin-top: 5%;
+
+}
+
+.icon-holder{
+    display:inline-grid;
+    /* border: 1px solid blue; */
+    margin: 1em;
+}
+
+.title {
+    text-align: center;
+}
