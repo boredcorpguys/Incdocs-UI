@@ -4,6 +4,20 @@
     left: 30%;
     right: 30%;
     /* border: 1px solid red; */
-    /* top: 20%; */
+    top: 13%;
 
+}
+
+.formInput{
+    margin-top:2%;
+    margin-bottom: 2%;
+    text-align: right;
+}
+
+.form-label {
+    padding-right: 10%
+}
+
+.formActions{
+    margin-top:5%;
 }

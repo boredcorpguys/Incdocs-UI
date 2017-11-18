@@ -1,29 +1,35 @@
 <div class="newCompanyActionsDiv">
-  <h2>
+  <h2 style="margin-left:30%">
     Map New Company
   </h2>
-
-  <div class="row">
-    <span>
+  <br />
+  <br />
+  <div class="row formInput">
+    <span class="col-md-6 form-label">
       Name
-      <span style="color:red">*</span> :
+      <span style="color:red">*</span>
     </span>
-    <input #name class="search-query" />
+    <input #name class="search-query" class="col-md-6" placeholder="Company Name" />
   </div>
 
-  <div class="row">
-    <span>
+  <div class="row formInput">
+    <span class="col-md-6 form-label">
       PAN Number
-      <span style="color:red">*</span> :
+      <span style="color:red">*</span>
     </span>
-    <input #pan />
+    <input #pan class="col-md-6" placeholder="Enter PAN Number as per ROC" />
   </div>
 
-  <div class="row">
-    <span>
-      CIN Number (if available):
+  <div class="row formInput">
+    <span class="col-md-6 form-label">
+      CIN Number (if available)
     </span>
-    <input #cin />
+    <input #cin class="col-md-6" placeholder="Enter CIN as per MCA" />
   </div>
-  
+
+  <div class="row formActions pull-right">
+    <button class="btn btn-default" (click)="submit(name.value, pan.value, cin.value)"> Submit </button>
+    <button class="btn btn-default" routerLink="/home" routerLinkActive="active"> Cancel </button>
+  </div>
+
 </div>

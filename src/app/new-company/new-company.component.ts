@@ -12,4 +12,7 @@ export class NewCompanyComponent implements OnInit {
   ngOnInit() {
   }
 
+  submit(companyName: string, panNumber: string, cinNumber: string) {
+    console.log(companyName + panNumber + cinNumber);
+  }
 }

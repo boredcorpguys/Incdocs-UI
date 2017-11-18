@@ -1,0 +1,26 @@
+.newCompanyActionsDiv {
+    position: absolute;
+    width: 37%;
+    left: 27%;
+    right: 27%;
+    /* border: 1px solid red; */
+    top: 13%;
+
+}
+#newCompanyform {
+
+}
+
+.formInput{
+    margin-top:2%;
+    margin-bottom: 2%;
+    text-align: right;
+}
+
+.form-label {
+    padding-right: 10%
+}
+
+.formActions{
+    margin-top:5%;
+}

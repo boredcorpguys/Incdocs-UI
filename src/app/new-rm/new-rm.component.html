@@ -1,3 +1,62 @@
-<p>
-  new-rm works!
-</p>
+<div class="newCompanyActionsDiv">
+  <div style="margin-left:40%">
+      <h2 >
+          Create New RM
+        </h2>
+  </div>
+  
+  <br />
+  <br />
+  <div id="newCompanyform">
+    <div class="row formInput">
+      <span class="col-md-6 form-label">
+        Name
+        <span style="color:red">*</span>
+      </span>
+      <input #name class="search-query" class="col-md-6" placeholder="Employee Name" />
+    </div>
+
+    <div class="row formInput">
+      <span class="col-md-6 form-label">
+        Employee ID
+        <span style="color:red">*</span>
+      </span>
+      <input #pan class="col-md-6" placeholder="Official Employee ID" />
+    </div>
+
+    <div class="row formInput">
+      <span class="col-md-6 form-label">
+        IncDocs ID :
+      </span>
+      <input #cin class="col-md-6" placeholder="Enter CIN as per MCA" disabled (value)="incdocsID" />
+    </div>
+
+    <div class="row formInput">
+      <span class="col-md-6 form-label">
+        Official Email
+        <span style="color:red">*</span>
+      </span>
+      <input #pan class="col-md-6" placeholder="Login and Password PartA details will be sent to this ID" />
+    </div>
+
+    <div class="row formInput">
+      <span class="col-md-6 form-label">
+        Mobile
+        <span style="color:red">*</span>
+      </span>
+      <input #pan class="col-md-6" placeholder="Password PartB will be sent to this number" />
+    </div>
+    <div class="row formInput">
+      <span class="col-md-6 form-label">
+        Role
+        <span style="color:red">*</span>
+      </span>
+      <input #pan class="col-md-6" placeholder="Official Employee ID" />
+    </div>
+  </div>
+  <div class="row formActions pull-right">
+    <button class="btn btn-default" (click)="submit(name.value, pan.value, cin.value)"> Submit </button>
+    <button class="btn btn-default" routerLink="/home" routerLinkActive="active"> Cancel </button>
+  </div>
+
+</div>
