@@ -7,7 +7,6 @@ import { NopageComponent } from './nopage/nopage.component';
 import { HeaderComponent } from './header/header.component';
 import {AppRoutingModule} from './router/app-routing.module';
 import { HomeComponent } from './home/home.component';
-import * as Material from '@angular/material';
 import { NewCompanyComponent } from './new-company/new-company.component';
 import { NewRmComponent } from './new-rm/new-rm.component';
 
