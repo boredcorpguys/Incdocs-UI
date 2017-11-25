@@ -25,3 +25,22 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Google Cloud 
+(https://github.com/fossasia/loklak_publisher)
+
+1. Build the image:
+
+    docker build . -t gcr.io/[project-id]/message-publisher:v1
+
+2. Push to Google Cloud:
+
+    gcloud docker -- push gcr.io/[project-id]/message-publisher:v1
+
+3. Deploy the web application:
+
+    gcloud app deploy --image-url gcr.io/[project-id]/message-publisher:v1
+
+4. View application in browser:
+
+    gcloud app browse

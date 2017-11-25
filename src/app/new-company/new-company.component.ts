@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewCompanyComponent implements OnInit {
 
-  constructor() { }
+
+  matTooltipPosition:string;
+  constructor() { 
+    this.matTooltipPosition = 'right';
+  }
 
   ngOnInit() {
   }

@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-rm.component.css']
 })
 export class NewRmComponent implements OnInit {
-
-  constructor() { }
+  matTooltipPosition:string;
+  constructor() {
+    this.matTooltipPosition = 'right';
+   }
 
   ngOnInit() {
   }

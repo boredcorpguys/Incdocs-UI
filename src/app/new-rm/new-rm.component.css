@@ -1,21 +1,30 @@
 .newCompanyActionsDiv {
     position: absolute;
-    width: 37%;
-    left: 27%;
-    right: 27%;
+    width: 50%;
+    left: 25%;
+    right: 25%;
     /* border: 1px solid red; */
     top: 13%;
 
 }
-#newCompanyform {
-
-}
 
 .formInput{
-    margin-top:2%;
-    margin-bottom: 2%;
+    /* margin-top:2%; */
+    /* margin-bottom: 2%; */
     text-align: right;
+    /* margin-left:15% !important; */
+    /* margin-right: 15% !important; */
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding-left:20%;
+    padding-right:20%;
 }
+
+.tooltip-holder{
+    margin-left:2%;
+}
+
 
 .form-label {
     padding-right: 10%
@@ -23,4 +32,9 @@
 
 .formActions{
     margin-top:5%;
+    margin-right:20%;
+}
+
+.full-width{
+    width: 100%;
 }
