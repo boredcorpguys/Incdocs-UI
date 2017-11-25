@@ -1,18 +1,44 @@
-<div class="header-div">
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div class="header-div">
+      <div class="header-content">
+        <div class="header-left pull-left">
+          <div class="icon-holder" *ngIf="showIcons()">
+            <i class="material-icons header-icon" title="">view_headline</i>
+            <i class="material-icons header-icon" title="">thumb_up</i>
+            <i class="material-icons header-icon" title="">history</i>
+          </div>
+        </div>
+        <div class="title-holder">
+          <span class="app-title" routerLink="/home"> IncDocs</span>
+        </div>
+        <div class="header-right pull-right" *ngIf="showIcons()">
+          <i class="material-icons header-icon" title="" routerLink="/home">home</i>
+          <i class="material-icons header-icon" title="">notifications</i>
+          <i class="material-icons header-icon" title="">message</i>
+          <i class="material-icons header-icon" title="">person</i>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<!-- <div class="header-div">
   <div class="header-content">
     <div class="header-left pull-left">
-      <div class="icon-holder">
+      <div class="icon-holder" *ngIf="showIcons()">
         <i class="material-icons header-icon" title="">view_headline</i>
         <i class="material-icons header-icon" title="">thumb_up</i>
         <i class="material-icons header-icon" title="">history</i>
       </div>
     </div>
     <span class="app-title" routerLink="/home" > IncDocs</span>
-    <div class="header-right pull-right">
+    <div class="header-right pull-right" *ngIf="showIcons()">
       <i class="material-icons header-icon" title="" routerLink="/home" >home</i>
       <i class="material-icons header-icon" title="">notifications</i>
       <i class="material-icons header-icon" title="">message</i>
       <i class="material-icons header-icon" title="">person</i>
     </div>
   </div>
-</div>
+</div> -->

@@ -6,12 +6,14 @@ import { NopageComponent } from '../nopage/nopage.component';
 import { HomeComponent } from '../home/home.component';
 import { NewCompanyComponent } from '../new-company/new-company.component';
 import {NewRmComponent} from '../new-rm/new-rm.component';
+import {LoginComponent} from '../login/login.component';
 const appRoutes: Routes = [
     { path: 'nopage', component: NopageComponent, outlet: 'popup' },
     { path: 'new-company', component: NewCompanyComponent},
     { path: 'new-rm', component: NewRmComponent },
     { path: 'home', component: HomeComponent },
-    { path: '', component: HomeComponent },
+    { path: 'login', component: LoginComponent },
+    { path: '', component: LoginComponent },
     { path: '**', component: NopageComponent }
 ];
 

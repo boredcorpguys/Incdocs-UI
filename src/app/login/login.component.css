@@ -1,0 +1,19 @@
+.full-width{
+    width: 100%;
+}
+
+.login-holder{
+    width:30%;
+    margin-left:35%;
+    margin-top:10%;    
+}
+
+.login-button{
+    margin-top:2%;
+    /* background-color:  #673ab7; */
+
+}
+
+.title{
+    margin-bottom:2%;
+}
