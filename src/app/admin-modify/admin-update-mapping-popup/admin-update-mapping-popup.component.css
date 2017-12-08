@@ -1,0 +1,47 @@
+
+.full-width{
+    width: 100%;
+}
+
+.formInput{
+    /* margin-top:2%; */
+    /* margin-bottom: 2%; */
+    text-align: right;
+    /* margin-left:15% !important; */
+    /* margin-right: 15% !important; */
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding-left:15%;
+    padding-right:5%;
+}
+
+.tooltip-holder{
+    margin-left:2%;
+}
+
+
+.form-label {
+    padding-right: 10%
+}
+
+.formActions{
+    margin-top:5%;
+    margin-right:20%;
+}
+
+.popup-title{
+    text-align:center
+}
+
+.popup-actions{
+    padding-left: 50%
+}
+
+.popup{
+
+}
+
+.popup-content{
+    overflow:inherit
+}

@@ -1,0 +1,82 @@
+<mat-tab-group class="demo-tab-group">
+  <mat-tab label="Modify RM details">
+    <div class="demo-tab-content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis
+      vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
+      felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum
+      enim, vel tempor sapien arcu a tellus.
+    </div>
+  </mat-tab>
+  <mat-tab label="Modify Middle Office person details">
+    <div class="demo-tab-content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis
+      vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
+      felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum
+      enim, vel tempor sapien arcu a tellus.
+    </div>
+  </mat-tab>
+  <mat-tab label="Modify Mapping"><!-- 
+    <span>Modify RM / ARM / Middle Office Person - Company mapping</span> -->
+    <div class="modify-mapping-content">
+      <div class="modify-mapping-searchbar">
+      <mat-form-field class="search-bar">
+        <input  matInput (keyup)="applyFilter(searchValue)" placeholder="Search by Company, RM, ARM and MOP" [(ngModel)]="searchValue">
+        <button mat-button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue='';applyFilter(searchValue)">
+            <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+      <div class="modify-mapping-table mat-elevation-z8">
+
+        <mat-table [dataSource]="dataSource" matSort>
+
+          <!-- Company Column -->
+          <ng-container matColumnDef="company">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Company </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.company}} </mat-cell>
+          </ng-container>
+
+          <!-- RM Column -->
+          <ng-container matColumnDef="rm">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> RM </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.rm}} </mat-cell>
+          </ng-container>
+
+          <!-- ARM1 Column -->
+          <ng-container matColumnDef="arm1">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ARM1 </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.arm1}} </mat-cell>
+          </ng-container>
+
+          <!-- ARM2 Column -->
+          <ng-container matColumnDef="arm2">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ARM2 </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.arm2}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="arm3">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ARM3 </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.arm3}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="middleOfficePerson1">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Middle Office Person 1 </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.middleOfficePerson1}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="middleOfficePerson2">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Middle Office Person 2 </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.middleOfficePerson2}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="handleRowClick(row)" >
+          </mat-row>
+        </mat-table>
+
+        <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      </div>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>

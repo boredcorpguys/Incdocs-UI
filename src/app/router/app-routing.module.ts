@@ -7,10 +7,12 @@ import { HomeComponent } from '../home/home.component';
 import { NewCompanyComponent } from '../new-company/new-company.component';
 import {NewRmComponent} from '../new-rm/new-rm.component';
 import {LoginComponent} from '../login/login.component';
+import {AdminModifyComponent} from '../admin-modify/admin-modify.component';
 const appRoutes: Routes = [
     { path: 'nopage', component: NopageComponent, outlet: 'popup' },
     { path: 'new-company', component: NewCompanyComponent},
     { path: 'new-rm', component: NewRmComponent },
+    { path: 'modify', component: AdminModifyComponent },
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: '', component: LoginComponent },
@@ -22,7 +24,7 @@ const appRoutes: Routes = [
         RouterModule.forRoot(
             appRoutes,
             {
-                enableTracing: true, // <-- debugging purposes only
+                enableTracing: false, // <-- debugging purposes only
             }
         )
     ],

@@ -1,0 +1,21 @@
+.modify-mapping-content{
+    margin-top:10px !important;
+    padding-left:5% !important;
+    margin-right: 5% !important;
+    margin-bottom: 5% !important;
+}
+
+.search-bar{
+    width:100% !important;
+    padding-left:2.5% ;
+    padding-right:2.5%;
+}
+
+.modify-mapping-table{
+    margin-top:10px;
+    height:100%;
+}
+
+.modify-mapping-searchbar{
+    margin-top:10px;
+}

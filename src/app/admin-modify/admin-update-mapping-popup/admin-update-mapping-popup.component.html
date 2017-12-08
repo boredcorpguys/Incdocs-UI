@@ -1,0 +1,100 @@
+<div class="popup">
+  <h1 mat-dialog-title class="popup-title">Update Individual Mapping</h1>
+  <div mat-dialog-content class="popup-content">
+
+    <div class="newCompanyActionsDiv">
+
+      <div id="">
+        <div class="row formInput">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Company Name" value="" [(ngModel)]="data.company">
+            <button mat-button *ngIf="data.company" matSuffix mat-icon-button aria-label="Clear" (click)="data.company=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <span matTooltip="modify Company Name" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+            <i class="material-icons">info</i>
+          </span>
+        </div>
+
+        <div class="row formInput">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="RM" value="" [(ngModel)]="data.rm">
+            <button mat-button *ngIf="data.rm" matSuffix mat-icon-button aria-label="Clear" (click)="data.rm=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <span matTooltip="modify RM for the above company" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+            <i class="material-icons">info</i>
+          </span>
+        </div>
+
+        <div class="row formInput">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="ARM1" value="" [(ngModel)]="data.arm1">
+            <button mat-button *ngIf="data.arm1" matSuffix mat-icon-button aria-label="Clear" (click)="data.arm1=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <span matTooltip="modify ARM1 for the above company" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+            <i class="material-icons">info</i>
+          </span>
+        </div>
+
+        <div class="row formInput">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="ARM2" value="" [(ngModel)]="data.arm2">
+            <button mat-button *ngIf="data.arm2" matSuffix mat-icon-button aria-label="Clear" (click)="data.arm2=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <span matTooltip="modify ARM2 for the above company" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+            <i class="material-icons">info</i>
+          </span>
+        </div>
+
+        <div class="row formInput">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="ARM3" value="" [(ngModel)]="data.arm3">
+            <button mat-button *ngIf="data.arm3" matSuffix mat-icon-button aria-label="Clear" (click)="data.arm3=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <span matTooltip="modify ARM3 for the above company" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+            <i class="material-icons">info</i>
+          </span>
+        </div>
+
+        <div class="row formInput">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Middle Office Person 1" value="" [(ngModel)]="data.middleOfficePerson1">
+            <button mat-button *ngIf="data.middleOfficePerson1" matSuffix mat-icon-button aria-label="Clear" (click)="data.middleOfficePerson1=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <span matTooltip="Modify middle office person 1 for the above company" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+            <i class="material-icons">info</i>
+          </span>
+        </div>
+
+        <div class="row formInput">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Middle Office Person 2" value="" [(ngModel)]="data.middleOfficePerson2">
+            <button mat-button *ngIf="data.middleOfficePerson2" matSuffix mat-icon-button aria-label="Clear" (click)="data.middleOfficePerson2=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <span matTooltip="Modify middle office person 2 for the above company" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+            <i class="material-icons">info</i>
+          </span>
+        </div>
+
+      </div>
+
+
+    </div>
+    <div mat-dialog-actions class="popup-actions">
+      <button mat-button [mat-dialog-close]="data.animal" tabindex="2">Ok</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">No Thanks</button>
+    </div>
+  </div>
