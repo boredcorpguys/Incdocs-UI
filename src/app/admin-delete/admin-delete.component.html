@@ -1,0 +1,36 @@
+<mat-tab-group class="demo-tab-group">
+
+  <mat-tab label="Delete RM">
+    <div class="demo-tab-content">
+      <div class="delete-rm-searchbar">
+        <h3 >List of RMs in Incdocs</h3>
+        <mat-form-field class="search-bar">
+          <input matInput (keyup)="applyFilter(searchValue)" placeholder="Search by Company, RM, ARM and MOP" [(ngModel)]="searchValue">
+          <button mat-button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue='';applyFilter(searchValue)">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="delete-rm-list">
+        <mat-selection-list #rms >
+          <mat-list-option  checkboxPosition= 'before' *ngFor="let rm of rmList" value="{{rm.incdocsID}}">
+            {{rm.name}}
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+    </div>
+    <div class="delete-rm-actions">
+        <button mat-button (click)="deleteRMs(rms.selectedOptions.selected)" tabindex="2">Update</button>
+        <button mat-button  routerLink="/home" tabindex="-1">cancel</button>
+    </div>
+
+  </mat-tab>
+  <mat-tab label="Delete Mapping ">
+    <div class="demo-tab-content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis
+      vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
+      felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum
+      enim, vel tempor sapien arcu a tellus.
+    </div>
+  </mat-tab>
+</mat-tab-group>

@@ -18,7 +18,10 @@ import { AdminFetchCurrentMappingsService } from './admin-modify/services/admin-
 import { AppMaterialDesignModule } from './material/app-material-design.module';
 import { AdminModifyComponent } from './admin-modify/admin-modify.component';
 import { AdminUpdateMappingPopupComponent } from './admin-modify/admin-update-mapping-popup/admin-update-mapping-popup.component';
-
+import { AdminDeleteComponent } from './admin-delete/admin-delete.component';
+import { AdminFetchCurrentRmsService } from './admin-delete/services/admin-fetch-current-rms.service';
+import { AdminDeleteConfirmationComponent } from './admin-delete/admin-delete-confirmation/admin-delete-confirmation.component';
+import { AdminRouteToMappingsConfirmationComponent } from './admin-delete/admin-route-to-mappings-confirmation/admin-route-to-mappings-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { AdminUpdateMappingPopupComponent } from './admin-modify/admin-update-ma
     NewRmComponent,
     LoginComponent,
     AdminModifyComponent,
-    AdminUpdateMappingPopupComponent
+    AdminUpdateMappingPopupComponent,
+    AdminDeleteComponent,
+    AdminDeleteConfirmationComponent,
+    AdminRouteToMappingsConfirmationComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -41,8 +47,9 @@ import { AdminUpdateMappingPopupComponent } from './admin-modify/admin-update-ma
   ],
   entryComponents: [
     AdminUpdateMappingPopupComponent,
+    AdminDeleteConfirmationComponent
   ],
-  providers: [LoginService, AdminFetchCurrentMappingsService],
+  providers: [LoginService, AdminFetchCurrentMappingsService, AdminFetchCurrentRmsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

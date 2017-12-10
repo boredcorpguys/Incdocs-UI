@@ -8,11 +8,14 @@ import { NewCompanyComponent } from '../new-company/new-company.component';
 import {NewRmComponent} from '../new-rm/new-rm.component';
 import {LoginComponent} from '../login/login.component';
 import {AdminModifyComponent} from '../admin-modify/admin-modify.component';
+import {AdminDeleteComponent} from '../admin-delete/admin-delete.component';
+
 const appRoutes: Routes = [
     { path: 'nopage', component: NopageComponent, outlet: 'popup' },
     { path: 'new-company', component: NewCompanyComponent},
     { path: 'new-rm', component: NewRmComponent },
     { path: 'modify', component: AdminModifyComponent },
+    { path: 'delete', component: AdminDeleteComponent },
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: '', component: LoginComponent },

@@ -1,0 +1,14 @@
+<div class="popup">
+  <h1 mat-dialog-title class="popup-title">Please confirm RM deletion</h1>
+  <div mat-dialog-content class="popup-content">
+    <span>Deleting RMs : {{concatenatedData}} This will delete all the mappings to these RMs.</span>
+    <br/>
+    <br/>
+
+    <span>Are you Sure?</span>
+  </div>
+  <div mat-dialog-actions class="popup-actions">
+      <button mat-raised-button [mat-dialog-close]="true" tabindex="2">Yes, Delete</button>
+      <button mat-raised-button [mat-dialog-close]="false"  tabindex="-1">No, Let it be</button>
+  </div>
+</div>

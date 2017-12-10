@@ -11,11 +11,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   imports: [MatButtonModule, BrowserAnimationsModule, MatInputModule, MatToolbarModule, MatIconModule,
-    MatTooltipModule, MatTabsModule, MatPaginatorModule, MatSortModule, MatTableModule, MatDialogModule],
+    MatTooltipModule, MatTabsModule, MatPaginatorModule, MatSortModule, MatTableModule, MatDialogModule, MatListModule],
   exports: [MatButtonModule, BrowserAnimationsModule, MatInputModule, MatToolbarModule, MatIconModule,
-    MatTooltipModule, MatTabsModule, MatPaginatorModule, MatSortModule, MatTableModule, MatDialogModule],
+    MatTooltipModule, MatTabsModule, MatPaginatorModule, MatSortModule, MatTableModule, MatDialogModule, MatListModule],
 })
 export class AppMaterialDesignModule { }
