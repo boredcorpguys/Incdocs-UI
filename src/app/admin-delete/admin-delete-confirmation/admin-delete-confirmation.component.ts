@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { RM } from './../models/RM';
+import { User } from './../models/User';
 @Component({
   selector: 'app-admin-delete-confirmation',
   templateUrl: './admin-delete-confirmation.component.html',
@@ -9,7 +9,7 @@ import { RM } from './../models/RM';
 export class AdminDeleteConfirmationComponent implements OnInit {
   concatenatedData: string = '';
   constructor(public dialogRef: MatDialogRef<AdminDeleteConfirmationComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Array<RM>) {
+    @Inject(MAT_DIALOG_DATA) public data: Array<User>) {
     this.data.forEach(_data => { this.concatenatedData += _data.name + ', '; });
     this.concatenatedData = this.concatenatedData.trim();
   }

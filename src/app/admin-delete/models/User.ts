@@ -1,4 +1,4 @@
-export class RM {
+export class User {
     name: string;
     incdocsID: string;
     employeeID: string;

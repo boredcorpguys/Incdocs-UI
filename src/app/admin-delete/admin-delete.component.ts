@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminFetchCurrentRmsService } from './services/admin-fetch-current-rms.service';
-import { RM } from './models/RM';
+import { AdminFetchCurrentUsersService } from './services/admin-fetch-current-users.service';
+import { User } from './models/User';
 import { MatListOption } from '@angular/material/list';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { AdminDeleteConfirmationComponent } from './admin-delete-confirmation/admin-delete-confirmation.component';
@@ -11,51 +11,51 @@ import { AdminDeleteConfirmationComponent } from './admin-delete-confirmation/ad
   styleUrls: ['./admin-delete.component.css']
 })
 export class AdminDeleteComponent implements OnInit {
-  rmList: Array<RM>;
-  rmCache: Array<RM>;
-  rmMap: Map<string, RM>;
-  constructor(private rmService: AdminFetchCurrentRmsService,
+  userList: Array<User>;
+  userCache: Array<User>;
+  userMap: Map<string, User>;
+  constructor(private userService: AdminFetchCurrentUsersService,
     public dialog: MatDialog
   ) {
-    this.rmList = rmService.getListOfRMs();
-    this.rmCache = rmService.getListOfRMs();
-    this.rmMap = new Map<string, RM>();
+    this.userList = userService.getListOfUsers();
+    this.userCache = userService.getListOfUsers();
+    this.userMap = new Map<string, User>();
     this.populateRMMap();
   }
 
   private populateRMMap() {
-    this.rmList.forEach((rm: RM) => {
-      this.rmMap.set(rm.incdocsID, rm);
+    this.userList.forEach((user: User) => {
+      this.userMap.set(user.incdocsID, user);
     });
   }
   ngOnInit() {
   }
 
-  deleteRMs(selections: Array<MatListOption>) {
-    const selectedRMs: Array<RM> = new Array<RM>();
+  deleteUsers(selections: Array<MatListOption>) {
+    const selectedUsers: Array<User> = new Array<User>();
     selections.forEach(selection => {
-      selectedRMs.push(this.rmMap.get(selection.value));
+      selectedUsers.push(this.userMap.get(selection.value));
     });
-    this.openConfirmationBox(selectedRMs);
+    this.openConfirmationBox(selectedUsers);
   }
 
-  private openConfirmationBox(selectedRMs: Array<RM>) {
+  private openConfirmationBox(selectedUsers: Array<User>) {
     // this should open a confirmation box. If cancelled on confirmation box, do nothing. else, go ahead and make the backend call.
-    console.log(selectedRMs);
+    console.log(selectedUsers);
     const dialogRef = this.dialog.open(AdminDeleteConfirmationComponent, {
       width: '300px',
       height: '300px',
-      data: selectedRMs,
+      data: selectedUsers,
       hasBackdrop: true,
       disableClose: false
     });
 
     dialogRef.afterClosed().subscribe((result: boolean) => {
-      this.handleDeleteConfirmation(result, selectedRMs);
+      this.handleDeleteConfirmation(result, selectedUsers);
     });
   }
 
-  private handleDeleteConfirmation(result: boolean, selectedRMs: Array<RM>) {
+  private handleDeleteConfirmation(result: boolean, selectedRMs: Array<User>) {
     console.log(result);
     if (!result) {
       // do nothing
@@ -66,15 +66,15 @@ export class AdminDeleteComponent implements OnInit {
 
   applyFilter(searchValue: string) {
     if (!searchValue) {
-      this.rmList = this.rmCache;
+      this.userList = this.userCache;
     } else {
-      const temp: Array<RM> = new Array<RM>();
-      this.rmCache.forEach(element => {
+      const temp: Array<User> = new Array<User>();
+      this.userCache.forEach(element => {
         if (element.name.indexOf(searchValue) !== -1) {
           temp.push(element);
         }
       });
-      this.rmList = temp;
+      this.userList = temp;
     }
   }
 

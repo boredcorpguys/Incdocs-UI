@@ -1,9 +1,9 @@
 <mat-tab-group class="demo-tab-group">
 
-  <mat-tab label="Delete RM">
+  <mat-tab label="Delete User">
     <div class="demo-tab-content">
-      <div class="delete-rm-searchbar">
-        <h3 >List of RMs in Incdocs</h3>
+      <div class="delete-user-searchbar">
+        <h3 >List of Users in Incdocs</h3>
         <mat-form-field class="search-bar">
           <input matInput (keyup)="applyFilter(searchValue)" placeholder="Search by Company, RM, ARM and MOP" [(ngModel)]="searchValue">
           <button mat-button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue='';applyFilter(searchValue)">
@@ -11,16 +11,16 @@
           </button>
         </mat-form-field>
       </div>
-      <div class="delete-rm-list">
-        <mat-selection-list #rms >
-          <mat-list-option  checkboxPosition= 'before' *ngFor="let rm of rmList" value="{{rm.incdocsID}}">
-            {{rm.name}}
+      <div class="delete-user-list">
+        <mat-selection-list #users >
+          <mat-list-option  checkboxPosition= 'before' *ngFor="let user of userList" value="{{user.incdocsID}}">
+            {{user.name}}
           </mat-list-option>
         </mat-selection-list>
       </div>
     </div>
-    <div class="delete-rm-actions">
-        <button mat-button (click)="deleteRMs(rms.selectedOptions.selected)" tabindex="2">Update</button>
+    <div class="delete-user-actions">
+        <button mat-button (click)="deleteUsers(users.selectedOptions.selected)" tabindex="2">Delete</button>
         <button mat-button  routerLink="/home" tabindex="-1">cancel</button>
     </div>
 
@@ -32,5 +32,9 @@
       felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum
       enim, vel tempor sapien arcu a tellus.
     </div>
+    <div class="delete-user-actions">
+      <button mat-button (click)="deleteUsers(users.selectedOptions.selected)" tabindex="2">Delete</button>
+      <button mat-button  routerLink="/home" tabindex="-1">cancel</button>
+  </div>
   </mat-tab>
 </mat-tab-group>
