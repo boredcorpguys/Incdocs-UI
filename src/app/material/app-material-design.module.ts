@@ -14,11 +14,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatStepperModule} from '@angular/material';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   imports: [MatButtonModule, BrowserAnimationsModule, MatInputModule, MatToolbarModule, MatIconModule, MatExpansionModule,
-    MatTooltipModule, MatTabsModule, MatPaginatorModule, MatSortModule, MatTableModule, MatDialogModule, MatListModule, MatStepperModule],
+    MatTooltipModule, MatSnackBarModule, MatTabsModule, MatPaginatorModule, MatSortModule, MatTableModule, MatDialogModule,
+     MatListModule, MatStepperModule],
   exports: [MatButtonModule, BrowserAnimationsModule, MatInputModule, MatToolbarModule, MatIconModule, MatExpansionModule,
-    MatTooltipModule, MatTabsModule, MatPaginatorModule, MatSortModule, MatTableModule, MatDialogModule, MatListModule, MatStepperModule],
+    MatTooltipModule, MatSnackBarModule, MatTabsModule, MatPaginatorModule, MatSortModule, MatTableModule, MatDialogModule,
+     MatListModule, MatStepperModule],
 })
 export class AppMaterialDesignModule { }

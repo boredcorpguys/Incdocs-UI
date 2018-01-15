@@ -21,8 +21,10 @@ import { AdminUpdateMappingPopupComponent } from './admin-modify/admin-update-ma
 import { AdminDeleteComponent } from './admin-delete/admin-delete.component';
 import { AdminFetchCurrentUsersService } from './admin-delete/services/admin-fetch-current-users.service';
 import { AdminDeleteConfirmationComponent } from './admin-delete/admin-delete-confirmation/admin-delete-confirmation.component';
-import { AdminRouteToMappingsConfirmationComponent } from './admin-delete/admin-route-to-mappings-confirmation/admin-route-to-mappings-confirmation.component';
+import { AdminRouteToMappingsConfirmationComponent }  
+  from './admin-delete/admin-route-to-mappings-confirmation/admin-route-to-mappings-confirmation.component';
 import { AdminBulkUploadComponent } from './admin-bulk-upload/admin-bulk-upload.component';
+import { InputFileComponent } from './util/input-file/input-file.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { AdminBulkUploadComponent } from './admin-bulk-upload/admin-bulk-upload.
     AdminDeleteComponent,
     AdminDeleteConfirmationComponent,
     AdminRouteToMappingsConfirmationComponent,
-    AdminBulkUploadComponent
+    AdminBulkUploadComponent,
+    InputFileComponent
   ],
   imports: [
     BrowserAnimationsModule,

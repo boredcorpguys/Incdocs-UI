@@ -1,0 +1,13 @@
+<!-- <button mat-button color="primary">
+  <label for="fileinput">Select File
+    <i class="material-icons middle">attach_file</i>
+  </label>
+</button> -->
+<label> Select File
+  <i class="material-icons middle">attach_file</i>
+  <input #file type="file" (change)="onChange(file)">
+  <label>{{fileName}}</label>
+</label>
+<button mat-button *ngIf="fileName" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+  <mat-icon>close</mat-icon>
+</button>
