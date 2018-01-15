@@ -1,0 +1,11 @@
+.container{
+    padding-top:5%;
+}
+
+input[type=file]{
+    display:none;
+}
+
+.middle{
+    vertical-align: middle;
+}

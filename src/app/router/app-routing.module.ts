@@ -9,7 +9,7 @@ import {NewRmComponent} from '../new-rm/new-rm.component';
 import {LoginComponent} from '../login/login.component';
 import {AdminModifyComponent} from '../admin-modify/admin-modify.component';
 import {AdminDeleteComponent} from '../admin-delete/admin-delete.component';
-
+import {AdminBulkUploadComponent} from '../admin-bulk-upload/admin-bulk-upload.component';
 const appRoutes: Routes = [
     { path: 'nopage', component: NopageComponent, outlet: 'popup' },
     { path: 'new-company', component: NewCompanyComponent},
@@ -18,6 +18,7 @@ const appRoutes: Routes = [
     { path: 'delete', component: AdminDeleteComponent },
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'bulk-upload', component: AdminBulkUploadComponent },
     { path: '', component: LoginComponent },
     { path: '**', component: NopageComponent }
 ];

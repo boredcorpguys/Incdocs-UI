@@ -1,7 +1,7 @@
 .icon-large{
     font-size:10em !important;
-    color:#373b53;
-    /* color:grey; */
+    /* color:#373b53; */
+    /* color:whitesmoke; */
 }
 
 .homePageActionsDiv {
@@ -19,6 +19,7 @@
     /* border: 1px solid blue; */
     margin: 1.25em;
     width: 25%;
+    /* color:whitesmoke; */
 }
 
 .title {

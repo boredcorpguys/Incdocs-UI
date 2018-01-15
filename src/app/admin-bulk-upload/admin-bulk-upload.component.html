@@ -1,3 +1,109 @@
-<p>
-  admin-bulk-upload works!
-</p>
+<div class="container">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          RM Bulk Upload
+        </mat-panel-title>
+        <mat-panel-description>
+          Bulk Upload RM data as per template
+          <!--         We should probably give them like a template to understand how the format should be for upload -->
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <!--       This is to beautify normal input type="file". Can this be pushed to a separate component? -->
+      <button mat-button color="primary">
+        <label for="file-input">Select File
+          <i class="material-icons middle">attach_file</i>
+        </label>
+      </button>
+      <input #fileInput id="file-input" type="file" (change)="uploadFile(fileInput)" [(ngModel)] = "fileContent">
+
+      <button mat-button color="primary" class="pull-right">Download template</button>
+
+      <mat-action-row>  
+        <button mat-button color="primary" (click)="uploadFile(fileInput)">upload</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Middle Office Persons bulk upload
+        </mat-panel-title>
+        <mat-panel-description>
+          Please bulk upload Middle Office Persons as per template
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <button mat-button color="primary">
+        <label for="file-input">Select File
+          <i class="material-icons middle">attach_file</i>
+        </label>
+      </button>
+      <input id="file-input" type="file">
+
+      <button mat-button color="primary" class="pull-right">Download template</button>
+
+      <mat-action-row>
+        <button mat-button color="primary" (click)="uploadFile()">upload</button>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Company bulk upload
+        </mat-panel-title>
+        <mat-panel-description>
+          Please bulk upload company details as per the template
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <button mat-button color="primary">
+        <label for="file-input">Select File
+          <i class="material-icons middle">attach_file</i>
+        </label>
+      </button>
+      <input id="file-input" type="file">
+
+      <button mat-button color="primary" class="pull-right">Download template</button>
+
+      <mat-action-row>
+        <button mat-button color="primary" (click)="uploadFile()">upload</button>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">End</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Mapping bulk upload
+        </mat-panel-title>
+        <mat-panel-description>
+          Please bulk upload Mapping details as per the template
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <button mat-button color="primary">
+        <label for="file-input">Select File
+          <i class="material-icons middle">attach_file</i>
+        </label>
+      </button>
+      <input id="file-input" type="file">
+
+      <button mat-button color="primary" class="pull-right">Download template</button>
+
+      <mat-action-row>
+        <button mat-button color="primary" (click)="uploadFile()">upload</button>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">End</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+</div>
