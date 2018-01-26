@@ -1,40 +1,139 @@
 <mat-tab-group class="demo-tab-group">
-
+  <!-- First tab -> delete user -->
   <mat-tab label="Delete User">
-    <div class="demo-tab-content">
+    <div class="delete-user-content">
+      <!-- <h3 >Users' details in Incdocs</h3> -->
       <div class="delete-user-searchbar">
-        <h3 >List of Users in Incdocs</h3>
         <mat-form-field class="search-bar">
-          <input matInput (keyup)="applyFilter(searchValue)" placeholder="Search by Company, RM, ARM and MOP" [(ngModel)]="searchValue">
+          <input matInput (keyup)="applyFilter(searchValue)" placeholder="Search by User Name, Employee ID, Incdocs ID" [(ngModel)]="searchValue">
           <button mat-button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue='';applyFilter(searchValue)">
             <mat-icon>close</mat-icon>
           </button>
         </mat-form-field>
       </div>
-      <div class="delete-user-list">
-        <mat-selection-list #users >
-          <mat-list-option  checkboxPosition= 'before' *ngFor="let user of userList" value="{{user.incdocsID}}">
-            {{user.name}}
-          </mat-list-option>
-        </mat-selection-list>
+      <div class="modify-mapping-table mat-elevation-z8">
+
+        <mat-table [dataSource]="dataSource" matSort>
+
+          <!-- Company Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+          </ng-container>
+
+          <!-- RM Column -->
+          <ng-container matColumnDef="incdocsID">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Incdocs ID </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.incdocsID}} </mat-cell>
+          </ng-container>
+
+          <!-- ARM1 Column -->
+          <ng-container matColumnDef="employeeID">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Employee ID </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.employeeID}} </mat-cell>
+          </ng-container>
+
+          <!-- ARM2 Column -->
+          <ng-container matColumnDef="role">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Role </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.role}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="mobile">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Mobile </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.mobile}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="createdOn">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Created On </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.createdOn}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="lastModifiedOn">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Last Modified On </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.lastModifiedOn}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="handleRowClick(row)">
+          </mat-row>
+        </mat-table>
+
+        <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
       </div>
     </div>
     <div class="delete-user-actions">
-        <button mat-button (click)="deleteUsers(users.selectedOptions.selected)" tabindex="2">Delete</button>
-        <button mat-button  routerLink="/home" tabindex="-1">cancel</button>
+      <button mat-raised-button color="primary" routerLink="/home" tabindex="-1">back</button>
     </div>
 
   </mat-tab>
+
+
+  <!-- Second tab -> delete mappings. -->
   <mat-tab label="Delete Mapping ">
-    <div class="demo-tab-content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis
-      vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
-      felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum
-      enim, vel tempor sapien arcu a tellus.
+    <div class="delete-mappings-content">
+      <!-- <h3 >Users' details in Incdocs</h3> -->
+      <div class="delete-mappings-searchbar">
+        <mat-form-field class="search-bar">
+          <input matInput (keyup)="narrowMappings(companySearch)" placeholder="Search by User Name, Employee ID, Incdocs ID" [(ngModel)]="companySearch">
+          <button mat-button *ngIf="companySearch" matSuffix mat-icon-button aria-label="Clear" (click)="companySearch='';narrowMappings(companySearch)">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="modify-mapping-table mat-elevation-z8">
+
+        <mat-table [dataSource]="dataSource" matSort>
+
+          <!-- Company Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Company </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+          </ng-container>
+
+          <!-- RM Column -->
+          <ng-container matColumnDef="rm">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> RM </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.rm}} </mat-cell>
+          </ng-container>
+
+          <!-- ARM1 Column -->
+          <ng-container matColumnDef="arm1">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ARM1 </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.arm1}} </mat-cell>
+          </ng-container>
+
+          <!-- ARM2 Column -->
+          <ng-container matColumnDef="arm2">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ARM2 </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.arm2}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="mop1">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Middle Office Person 1 </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.mop1}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="mop2">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Middle Office Person 2 </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.mop2}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="handleRowClick(row)">
+          </mat-row>
+        </mat-table>
+
+        <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      </div>
     </div>
     <div class="delete-user-actions">
-      <button mat-button (click)="deleteUsers(users.selectedOptions.selected)" tabindex="2">Delete</button>
-      <button mat-button  routerLink="/home" tabindex="-1">cancel</button>
-  </div>
+      <button mat-raised-button color="primary" routerLink="/home" tabindex="-1">cancel</button>
+    </div>
   </mat-tab>
 </mat-tab-group>

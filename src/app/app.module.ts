@@ -14,17 +14,17 @@ import { NewRmComponent } from './new-rm/new-rm.component';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login.service';
 import { AdminFetchCurrentMappingsService } from './admin-modify/services/admin-fetch-current-mappings.service';
+import { AdminUserActionsService } from './services/admin-user-actions.service';
 // angular material design modules
 import { AppMaterialDesignModule } from './material/app-material-design.module';
 import { AdminModifyComponent } from './admin-modify/admin-modify.component';
 import { AdminUpdateMappingPopupComponent } from './admin-modify/admin-update-mapping-popup/admin-update-mapping-popup.component';
 import { AdminDeleteComponent } from './admin-delete/admin-delete.component';
-import { AdminFetchCurrentUsersService } from './admin-delete/services/admin-fetch-current-users.service';
+import { AdminFetchCurrentUsersService } from './services/admin-fetch-current-users.service';
 import { AdminDeleteConfirmationComponent } from './admin-delete/admin-delete-confirmation/admin-delete-confirmation.component';
-import { AdminRouteToMappingsConfirmationComponent }  
-  from './admin-delete/admin-route-to-mappings-confirmation/admin-route-to-mappings-confirmation.component';
 import { AdminBulkUploadComponent } from './admin-bulk-upload/admin-bulk-upload.component';
 import { InputFileComponent } from './util/input-file/input-file.component';
+import { AdminFetchCurrentCompaniesService } from './services/admin-fetch-current-companies.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,6 @@ import { InputFileComponent } from './util/input-file/input-file.component';
     AdminUpdateMappingPopupComponent,
     AdminDeleteComponent,
     AdminDeleteConfirmationComponent,
-    AdminRouteToMappingsConfirmationComponent,
     AdminBulkUploadComponent,
     InputFileComponent
   ],
@@ -54,7 +53,8 @@ import { InputFileComponent } from './util/input-file/input-file.component';
     AdminUpdateMappingPopupComponent,
     AdminDeleteConfirmationComponent
   ],
-  providers: [LoginService, AdminFetchCurrentMappingsService, AdminFetchCurrentUsersService],
+  providers: [LoginService, AdminFetchCurrentMappingsService, AdminUserActionsService,
+    AdminFetchCurrentUsersService, AdminFetchCurrentCompaniesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

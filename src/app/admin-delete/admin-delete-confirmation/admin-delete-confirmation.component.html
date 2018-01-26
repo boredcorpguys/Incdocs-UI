@@ -1,14 +1,45 @@
 <div class="popup">
-  <h1 mat-dialog-title class="popup-title">Please confirm RM deletion</h1>
+  <h1 mat-dialog-title class="popup-title">Delete User</h1>
   <div mat-dialog-content class="popup-content">
-    <span>Deleting RMs : {{concatenatedData}} This will delete all the mappings to these RMs.</span>
+    <!-- <span>Deleting RMs : {{user.name}} This will delete all the mappings to these RMs.</span> -->
+    <div class="row">
+      <span class="col-md-4">Name: {{user.name}}</span>
+      <span class="col-md-4">IncDocs ID: {{user.incdocsID}}</span>
+      <span class="col-md-4">Role: {{user.role}}</span>
+    </div>
     <br/>
+    <span>Companies mapped to User: </span>
     <br/>
+    <div class="compaiesTable">
+      <mat-table [dataSource]="dataSource" matSort>
+  
+        <!-- Company Column -->
+        <ng-container matColumnDef="companyName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Company Name </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.companyName}} </mat-cell>
+        </ng-container>
 
-    <span>Are you Sure?</span>
+        <!-- RM Column -->
+        <ng-container matColumnDef="pan">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> PAN </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.pan}} </mat-cell>
+        </ng-container>
+
+        <!-- ARM1 Column -->
+        <ng-container matColumnDef="mappedOn">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Mapped On </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.mappedOn}} </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" >
+        </mat-row>
+      </mat-table>
+    </div>
   </div>
   <div mat-dialog-actions class="popup-actions">
-      <button mat-raised-button [mat-dialog-close]="true" tabindex="2">Yes, Delete</button>
-      <button mat-raised-button [mat-dialog-close]="false"  tabindex="-1">No, Let it be</button>
+      <button mat-raised-button color="primary" (click)="deleteUser()" [mat-dialog-close]="true" >Delete</button>
+      <button mat-raised-button color="primary" [mat-dialog-close]="false"  >Cancel</button>
   </div>
 </div>

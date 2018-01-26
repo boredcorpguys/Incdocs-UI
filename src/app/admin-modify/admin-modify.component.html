@@ -60,9 +60,14 @@
           </mat-row>
         </mat-table>
 
-        <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
       </div>
+      
     </div>
+    <div class="admin-modify-actions">
+      <!-- <button mat-button (click)="deleteUsers(users.selectedOptions.selected)" tabindex="2">Delete</button> -->
+      <button mat-raised-button color="primary"  routerLink="/home" tabindex="-1">back</button>
+  </div>
   </mat-tab>
   <mat-tab label="Modify RM details">
     <div class="demo-tab-content">

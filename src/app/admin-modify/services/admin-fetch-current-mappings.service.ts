@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Mapping } from './../models/Mapping';
+import { ModifyMappingsRow } from './../models/ModifyMappingsRow';
 @Injectable()
 export class AdminFetchCurrentMappingsService {
 
   constructor() { }
 
-  public fetchCurrentMappings(): Mapping[] {
+  public fetchCurrentMappings(): ModifyMappingsRow[] {
     // this should be a backend call. for now mocking it.
+    // or else, this should use the other service to fetch all the users, companies and then flatten this out
     return this.fetchStubbedMappings();
   }
 
@@ -14,10 +15,10 @@ export class AdminFetchCurrentMappingsService {
     return this.fetchStubbedHeaders();
   }
 
-  private fetchStubbedMappings(): Mapping[] {
-    const mappings: Mapping[] = new Array<Mapping>();
+  private fetchStubbedMappings(): ModifyMappingsRow[] {
+    const mappings: ModifyMappingsRow[] = new Array<ModifyMappingsRow>();
     for (let i = 0; i < 100; ++i) {
-      mappings.push(new Mapping(
+      mappings.push(new ModifyMappingsRow(
         'Company' + i,
         'RM' + i,
         'ARM1' + i,

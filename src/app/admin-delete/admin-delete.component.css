@@ -5,6 +5,20 @@
     margin-bottom: 5% !important;
 }
 
+.delete-user-content{
+    margin-top:10px !important;
+    padding-left:5% !important;
+    margin-right: 5% !important;
+    margin-bottom: 5% !important;
+}
+
+.delete-mappings-content{
+    margin-top:10px !important;
+    padding-left:5% !important;
+    margin-right: 5% !important;
+    margin-bottom: 5% !important;
+}
+
 h3{
     text-align: center !important;
 }
@@ -20,12 +34,16 @@ h3{
     height:100%;
 }
 
-.modify-mapping-searchbar{
+.delete-user-searchbar{ 
+    margin-top:10px;
+}
+
+.delete-mappings-searchbar{ 
     margin-top:10px;
 }
 
 .delete-user-actions{
-    padding-left:50%;
+    padding-left:45%;
 }
 
 .delete-user-actions button{

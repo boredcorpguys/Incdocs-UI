@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { Mapping } from './../models/Mapping';
+import { ModifyMappingsRow } from './../models/ModifyMappingsRow';
 @Component({
   selector: 'app-admin-update-mapping-popup',
   templateUrl: './admin-update-mapping-popup.component.html',
@@ -11,7 +11,7 @@ export class AdminUpdateMappingPopupComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<AdminUpdateMappingPopupComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Mapping
+    @Inject(MAT_DIALOG_DATA) public data: ModifyMappingsRow
   ) {
     this.matTooltipPosition = 'right';
   }
