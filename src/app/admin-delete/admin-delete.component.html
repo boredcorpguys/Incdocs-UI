@@ -80,7 +80,7 @@
       <!-- <h3 >Users' details in Incdocs</h3> -->
       <div class="delete-mappings-searchbar">
         <mat-form-field class="search-bar">
-          <input matInput (keyup)="narrowMappings(companySearch)" placeholder="Search by User Name, Employee ID, Incdocs ID" [(ngModel)]="companySearch">
+          <input matInput (keyup)="narrowMappings(companySearch)" placeholder="Search by Company or Username" [(ngModel)]="companySearch">
           <button mat-button *ngIf="companySearch" matSuffix mat-icon-button aria-label="Clear" (click)="companySearch='';narrowMappings(companySearch)">
             <mat-icon>close</mat-icon>
           </button>
@@ -88,44 +88,44 @@
       </div>
       <div class="modify-mapping-table mat-elevation-z8">
 
-        <mat-table [dataSource]="dataSource" matSort>
+        <mat-table [dataSource]="dataSourceForCompanies" matSort>
 
           <!-- Company Column -->
           <ng-container matColumnDef="name">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Company </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+            <mat-cell *matCellDef="let data"> {{data.name}} </mat-cell>
           </ng-container>
 
           <!-- RM Column -->
           <ng-container matColumnDef="rm">
             <mat-header-cell *matHeaderCellDef mat-sort-header> RM </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.rm}} </mat-cell>
+            <mat-cell *matCellDef="let data"> {{data.rm.name}} </mat-cell>
           </ng-container>
 
           <!-- ARM1 Column -->
           <ng-container matColumnDef="arm1">
             <mat-header-cell *matHeaderCellDef mat-sort-header> ARM1 </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.arm1}} </mat-cell>
+            <mat-cell *matCellDef="let data"> {{data.arm1.name}} </mat-cell>
           </ng-container>
 
           <!-- ARM2 Column -->
           <ng-container matColumnDef="arm2">
             <mat-header-cell *matHeaderCellDef mat-sort-header> ARM2 </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.arm2}} </mat-cell>
+            <mat-cell *matCellDef="let data"> {{data.arm2.name}} </mat-cell>
           </ng-container>
 
           <ng-container matColumnDef="mop1">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Middle Office Person 1 </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.mop1}} </mat-cell>
+            <mat-cell *matCellDef="let data"> {{data.mop1.name}} </mat-cell>
           </ng-container>
 
           <ng-container matColumnDef="mop2">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Middle Office Person 2 </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.mop2}} </mat-cell>
+            <mat-cell *matCellDef="let data"> {{data.mop2.name}} </mat-cell>
           </ng-container>
 
-          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="handleRowClick(row)">
+          <mat-header-row *matHeaderRowDef="displayedColumnsForCompanies"></mat-header-row>
+          <mat-row *matRowDef="let data; columns: displayedColumnsForCompanies;" (click)="handleDeleteMappingRowClick(data)">
           </mat-row>
         </mat-table>
 

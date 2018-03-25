@@ -1,19 +1,17 @@
 <div class="homePageActionsDiv">
-  <div class="icon-holder" routerLink="/new-company" routerLinkActive="active">
+  <div class="icon-holder" routerLink="/bank/admin/new-company" routerLinkActive="active" *ngIf="showActionItem('CREATE_COMPANY')">
     <i class="material-icons icon-large" title="Create new Company">domain</i>
-    <!-- <mat-icon class="icon-large">domain</mat-icon> -->
     <span class="title">Create new Company</span>
   </div>
-  <div class="icon-holder" routerLink="/new-rm" routerLinkActive="active">
-    <!-- <i class="material-icons icon-large">supervisor_account</i> -->
-    <i class="material-icons icon-large" title="Create new RM">person_add</i>
-    <span class="title"> Create new RM</span>
+  <div class="icon-holder" routerLink="/bank/admin/new-rm" routerLinkActive="active" *ngIf="showActionItem('CREATE_USER')">
+    <i class="material-icons icon-large" title="Create new User">person_add</i>
+    <span class="title"> Create new User</span>
   </div>
-  <div class="icon-holder" routerLink="/bulk-upload">
+  <div class="icon-holder" routerLink="/bank/admin/bulk-upload" *ngIf="showActionItem('BULK_UPLOAD_MAPPINGS')">
     <i class="material-icons icon-large" title="Bulk Upload">file_upload</i>
     <span class="title"> Bulk Upload</span>
   </div>
-  <div class="icon-holder" routerLink="/modify">
+  <!-- <div class="icon-holder" routerLink="/modify">
     <i class="material-icons icon-large" title="Modify Mapping">edit</i>
     <span class="title"> Modify Mapping</span>
   </div>
@@ -24,6 +22,6 @@
   <div class="icon-holder" routerLink="/delete">
     <i class="material-icons icon-large" title="Delete RM ">delete</i>
     <span class="title"> Delete</span>
-  </div>
-
+  </div> -->
+  <loader [loading]="loading"></loader>
   <div>

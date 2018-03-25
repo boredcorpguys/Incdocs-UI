@@ -69,20 +69,78 @@
       <button mat-raised-button color="primary"  routerLink="/home" tabindex="-1">back</button>
   </div>
   </mat-tab>
-  <mat-tab label="Modify RM details">
+  <mat-tab label="Modify User Details">
     <div class="demo-tab-content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis
-      vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
-      felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum
-      enim, vel tempor sapien arcu a tellus.
-    </div>
-  </mat-tab>
-  <mat-tab label="Modify Middle Office person details">
-    <div class="demo-tab-content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis
-      vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
-      felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum
-      enim, vel tempor sapien arcu a tellus.
+        <div class="modify-mapping-content">
+            <div class="modify-mapping-searchbar">
+              <mat-form-field class="search-bar">
+                <input matInput (keyup)="narrowUsers(userSearchValue)" placeholder="Search by name, incdocs id or employee id" [(ngModel)]="userSearchValue">
+                <button mat-button *ngIf="userSearchValue" matSuffix mat-icon-button aria-label="Clear" (click)="userSearchValue='';narrowUsers(userSearchValue)">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <div class="modify-mapping-table mat-elevation-z8">
+      
+              <mat-table [dataSource]="dataSourceForUserDetails" matSort>
+      
+                <!-- Company Column -->
+                <ng-container matColumnDef="name">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+                </ng-container>
+      
+                <!-- RM Column -->
+                <ng-container matColumnDef="incdocsID">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Incdocs ID </mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.incdocsID}} </mat-cell>
+                </ng-container>
+      
+                <!-- ARM1 Column -->
+                <ng-container matColumnDef="employeeID">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Employee ID </mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.employeeID}} </mat-cell>
+                </ng-container>
+      
+                <!-- ARM2 Column -->
+                <ng-container matColumnDef="role">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Role </mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.role}} </mat-cell>
+                </ng-container>
+      
+                <ng-container matColumnDef="mobile">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Mobile </mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.mobile}} </mat-cell>
+                </ng-container>
+      
+                <ng-container matColumnDef="email">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
+                </ng-container>
+      
+                <ng-container matColumnDef="createdOn">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Created On </mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.createdOn}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="lastModifiedOn">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Last Modified On </mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.lastModifiedOn}} </mat-cell>
+                  </ng-container>
+      
+                <mat-header-row *matHeaderRowDef="displayedColumnsForUserDetails"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumnsForUserDetails;" (click)="handleUserModifyRowClick(row)">
+                </mat-row>
+              </mat-table>
+      
+              <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            
+          </div>
+          <div class="admin-modify-actions">
+            <!-- <button mat-button (click)="deleteUsers(users.selectedOptions.selected)" tabindex="2">Delete</button> -->
+            <button mat-raised-button color="primary"  routerLink="/home" tabindex="-1">back</button>
+        </div>
     </div>
   </mat-tab>
 </mat-tab-group>

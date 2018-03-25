@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../login.service';
+import { LoginService, LoginStatus } from '../login/services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   showIcons(){
     //this should also check for Router state to see if we are in login page
-    return this.service.isLoggedIn();
+    return this.service.isLoggedIn() === LoginStatus.LOGGEDIN;
   }
 
 }

@@ -8,7 +8,12 @@ import { MatListOption } from '@angular/material/list';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { AdminDeleteConfirmationComponent } from './admin-delete-confirmation/admin-delete-confirmation.component';
 import { AdminFetchCurrentCompaniesService } from '../services/admin-fetch-current-companies.service';
+import { AdminDeleteMappingConfirmationComponent } from './admin-delete-mapping-confirmation/admin-delete-mapping-confirmation.component';
+import { AdminUserModifyPopupComponent } from '../admin-modify/admin-user-modify-popup/admin-user-modify-popup.component';
 
+//TODO
+// 1. On Delete mapping page, sorting and pagination doesnt work because of ViewChild decorator
+// 2. Also, sorting doesnt work as Company doesnt directly have the strings and has Users instead
 @Component({
   selector: 'app-admin-delete',
   templateUrl: './admin-delete.component.html',
@@ -56,6 +61,10 @@ export class AdminDeleteComponent implements OnInit, AfterViewInit {
     this.openConfirmationBox(row);
   }
 
+  handleDeleteMappingRowClick(row: Company){
+    this.openConfirmationBoxForDeleteMapping(row);
+  }
+
 
 
   private openConfirmationBox(selectedUser: User) {
@@ -63,7 +72,7 @@ export class AdminDeleteComponent implements OnInit, AfterViewInit {
     console.log(selectedUser);
     const dialogRef = this.dialog.open(AdminDeleteConfirmationComponent, {
       width: '600px',
-      height: '400px',
+      height: '550px',
       data: selectedUser,
       hasBackdrop: true,
       disableClose: false
@@ -83,6 +92,16 @@ export class AdminDeleteComponent implements OnInit, AfterViewInit {
     }
   }
 
+  private openConfirmationBoxForDeleteMapping(company: Company){
+    const dialogRef = this.dialog.open(AdminDeleteMappingConfirmationComponent,{
+      width: '600px',
+      height: '550px',
+      data: company,
+      hasBackdrop: true,
+      disableClose: false
+    });
+  }
+
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
@@ -91,7 +110,7 @@ export class AdminDeleteComponent implements OnInit, AfterViewInit {
 
   narrowMappings(filterValue: string) {
     filterValue = filterValue.toLowerCase().trim();
-
+    this.dataSourceForCompanies.filter = filterValue; //TODO this will not search Users with their usernames as they are objects and not plain strings
 
   }
 

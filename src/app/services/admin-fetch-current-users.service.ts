@@ -6,6 +6,7 @@ import { Company } from '../models/Company';
 @Injectable()
 export class AdminFetchCurrentUsersService {
   userList: Array<User> = new Array<User>();
+  usernames: Array<string> = new Array<string>();
   constructor() {
     // ideally this should call backend to fetch the list of current RMs.
     // for now stubbing the data
@@ -34,6 +35,7 @@ export class AdminFetchCurrentUsersService {
           this.getRandomDate(),
           this.generateMappings(names[index])
         ));
+        this.usernames.push(names[index]);
     }
   }
 
@@ -80,6 +82,10 @@ export class AdminFetchCurrentUsersService {
 
   public getListOfUsers() {
     return this.userList;
+  }
+
+  public getStringListOfUsers(){
+    return this.usernames;
   }
 
   public fetchUsersHeaders() {
