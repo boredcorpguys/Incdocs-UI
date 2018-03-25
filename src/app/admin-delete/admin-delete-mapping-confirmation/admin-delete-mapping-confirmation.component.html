@@ -1,0 +1,57 @@
+<div class="popup">
+  <h1 mat-dialog-title class="popup-title">Delete Mapping</h1>
+  <div mat-dialog-content class="popup-content">
+    <!-- <span>Deleting RMs : {{user.name}} This will delete all the mappings to these RMs.</span> -->
+    <div class="row">
+      <span class="col-md-4">Company: {{company.name}}</span>
+    </div>
+    <br/>
+    <div class="compaiesTable">
+      <mat-table [dataSource]="dataSource" matSort>
+        
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="selected">
+          <mat-header-cell *matHeaderCellDef>
+              <mat-checkbox (click)= "selectAllRows()"></mat-checkbox>  
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row"> 
+            <mat-checkbox [(ngModel)]= "row.selected" ></mat-checkbox>
+          </mat-cell>
+        </ng-container>
+
+        <!-- Role Column -->
+        <ng-container matColumnDef="role">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Role </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.role}} </mat-cell>
+        </ng-container>
+
+        <!-- name Column -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+        </ng-container>
+
+        <!-- Incdocs ID Column -->
+        <ng-container matColumnDef="incdocsId">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Incdocs ID </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.incdocsId}} </mat-cell>
+        </ng-container>
+
+        <!-- Employee ID Column -->
+        <ng-container matColumnDef="employeeId">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Employee ID </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.employeeId}} </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" >
+        </mat-row>
+      </mat-table>
+    </div>
+  </div>
+  <div mat-dialog-actions class="popup-actions">
+      <button mat-raised-button color="primary" (click)="deleteMappings()" [mat-dialog-close]="true" >Delete</button>
+      <button mat-raised-button color="primary" [mat-dialog-close]="false"  >Cancel</button>
+  </div>
+</div>

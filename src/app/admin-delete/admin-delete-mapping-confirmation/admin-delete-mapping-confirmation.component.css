@@ -1,0 +1,21 @@
+.popup-title{
+    position: relative;
+    margin-left: calc(50% - 75px);
+    position: relative;
+}
+
+.popup-content{
+    /* position: relative; */
+}
+
+.popup-actions{
+    float:right;
+    margin-right: 2%;
+    position: relative;
+    bottom:0;
+    right: 0;
+}
+
+.compaiesTable{
+    /* max-height: 190px !important; */
+}

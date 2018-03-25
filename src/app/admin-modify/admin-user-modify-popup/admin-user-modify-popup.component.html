@@ -1,0 +1,87 @@
+<div class="popup">
+  <h1 mat-dialog-title class="popup-title">Update Individual Mapping</h1>
+  <div mat-dialog-content class="popup-content">
+
+    <div class="newCompanyActionsDiv">
+
+      <div id="">
+        <div class="row formInput">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="User Name" value="" [(ngModel)]="data.name">
+            <button mat-button *ngIf="data.name" matSuffix mat-icon-button aria-label="Clear" (click)="data.name=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <span matTooltip="modify User Name" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+            <i class="material-icons">info</i>
+          </span>
+        </div>
+
+        <div class="row formInput">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Incdocs ID" value="" [(ngModel)]="data.incdocsID">
+            <button mat-button *ngIf="data.incdocsID" matSuffix mat-icon-button aria-label="Clear" (click)="data.incdocsID=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <span matTooltip="modify Incdocs ID of the user" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+            <i class="material-icons">info</i>
+          </span>
+        </div>
+
+        <div class="row formInput">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Employee ID" value="" [(ngModel)]="data.employeeID">
+            <button mat-button *ngIf="data.employeeID" matSuffix mat-icon-button aria-label="Clear" (click)="data.employeeID=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <span matTooltip="modify Employee ID of the user" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+            <i class="material-icons">info</i>
+          </span>
+        </div>
+
+        <div class="row formInput">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Role" value="" [(ngModel)]="data.role">
+            <button mat-button *ngIf="data.role" matSuffix mat-icon-button aria-label="Clear" (click)="data.role=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <span matTooltip="modify role of the user" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+            <i class="material-icons">info</i>
+          </span>
+        </div>
+
+        <div class="row formInput">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Mobile" value="" [(ngModel)]="data.mobile">
+            <button mat-button *ngIf="data.mobile" matSuffix mat-icon-button aria-label="Clear" (click)="data.mobile=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <span matTooltip="modify mobile number of the user" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+            <i class="material-icons">info</i>
+          </span>
+        </div>
+
+        <div class="row formInput">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Email" value="" [(ngModel)]="data.email">
+            <button mat-button *ngIf="data.email" matSuffix mat-icon-button aria-label="Clear" (click)="data.email=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <span matTooltip="Modify email address of the user" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+            <i class="material-icons">info</i>
+          </span>
+        </div>
+      </div>
+
+
+    </div>
+    <div mat-dialog-actions class="popup-actions">
+      <button mat-raised-button color="primary" [mat-dialog-close]="data" tabindex="2">Update</button>
+      <button mat-raised-button color="primary" (click)="onNoClick()" tabindex="-1">cancel</button>
+    </div>
+  </div>

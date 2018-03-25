@@ -1,0 +1,207 @@
+1. Login service
+
+Input: Username , Password
+Type: Post
+Output Expected: 
+{
+	boolean authenticated, 
+	Role,
+	List<Resource>,
+	List<Action>
+}
+
+2. Create New Company service
+
+Input: {
+	String companyName;
+	String panNumber;
+	String cinNumber;
+}
+
+Type: Post
+
+Output Expected: 
+{
+	boolean operationSuccessful;
+}
+
+3. Create New User Service
+
+Input:{
+	String name;
+	String employeeID;
+	String incdocsID;
+	String email;
+	String mobile;
+	String? role;
+}
+
+Type: Post
+
+Output Expected: 
+{
+	boolean operationSuccessful;
+}
+
+4. Get Current Roles Service
+Input: none
+
+Type: Get
+
+Output Expected: {
+	List<Role> roles;
+
+	Role{
+		int roleID;
+		String roleName;
+		String description;
+	}
+}
+
+5. Bulk Upload - download template
+
+Input: {
+	String uploadType;
+}
+
+Type: Get (File download)
+
+Ouptut: {
+	String fileName;
+	File template;
+	String uploadType
+}
+
+6. Bulk Uplaod - Post upload fileName
+
+Input:{
+	String uploadType;
+	File fileToBeUploaded;
+}
+
+Type: Post
+
+Output: {
+	boolean  uploadSucessful;
+	String comment; // description in case of error, irrelevant if operation is successful
+}
+
+7. Modify - Modify Mapping - Get current Mappings
+	Delete - Delete Mapping - Get current Mappings
+
+Input :
+{
+	User currentUser; //admin
+	//User{
+		String name;
+		String incdocsID;
+		String role;
+	}
+}
+
+Type: Post
+
+Output Expected: {
+//the below list will be a subset of companies, to which the current user is an admin of
+	List<Company> 
+	
+	//Company{
+		private name: string;
+		private pan: string;
+		private rm: User;
+		private arm1: User;
+		private arm2: User;
+		private admin: User;
+		private mop1: User; // this can be a list?
+		private mop2: User;
+	}
+}
+
+8. Modify - Modify Mapping/ Modify User Details  - Get current list of users
+	Delete - Delete User   - Get current list of users
+	Multiple Replace - Get current list of users for autocomplete
+// List of users, that are working with companies, to which the current user is an admin of
+// This is to autocomplete the input boxes in Modify Mapping screen
+
+Input:{
+	User currentUser;
+}
+
+Type: Post
+
+Output Expected: {
+	List< User > usersUnderThisAdmin;
+	//User{
+		String name;
+		String incdocsID;
+		String role;
+	}
+}
+
+9. Modify - Modify Mapping - Update Mapping
+Input:{
+	User userMakingChanges;
+	String companyID;
+	Company company; //This company object would contain updated mappings.
+}
+
+Type: Post
+
+Output Expected: {
+	boolean operationSuccessful;
+}
+
+
+10. Delete - Delete User - Get Companies the user is mapped to
+
+Input: {
+	User user;
+}
+
+Type: Post
+
+Output Expected: {
+	List<Company> companiesUserIsMappedTo;
+}
+
+
+11.Delete - Delete User - Delete a given user
+
+Input: {
+	User userToBeDeleted;
+}
+
+Type: Post
+
+Output Expected:{
+	boolean operationSuccessful;
+}
+
+12. Delete - Delete Mapping - Delete given mappings for a company
+
+Input: {
+	Company companyToWhichMappingsAreToBeDeleted;
+	List<Role> rolesToBeDeleted;
+}
+
+Type: Delete/ Post
+
+Output Expected:{
+	boolean operationSuccessful;
+}
+
+13. Multiple Replace - Update mappings to multiple companies at once
+
+Input: {
+	List<Company> companiesModified;
+	Role roleModified;
+	User currentUser;
+	User new User;
+}
+
+Type: Put/Post
+
+Ouptut Expected:{
+	boolean operationSuccessful;
+	String comment;
+}

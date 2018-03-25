@@ -1,0 +1,9 @@
+<div class="container">
+  <angular-slickgrid [gridId] = "getGridID()"
+            (onDataviewCreated)="dataviewReady($event)" 
+            (onGridCreated)="gridReady($event)"
+            [columnDefinitions]="gridColumnDefinitions"
+            [gridOptions]="gridOptions"
+            [dataset]="gridDataset">
+  </angular-slickgrid>
+</div>
