@@ -10,8 +10,8 @@ import { NopageComponent } from './nopage/nopage.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './router/app-routing.module';
 import { HomeComponent } from './home/home.component';
-import { NewCompanyComponent } from './new-company/new-company.component';
-import { NewRmComponent } from './new-rm/new-rm.component';
+import { BankAdminNewCompanyComponent } from './bank-admin-new-company/bank-admin-new-company.component';
+import { BankAdminNewUserComponent } from './bank-admin-new-user/bank-admin-new-user.component';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/services/login.service';
 import { AdminFetchCurrentMappingsService } from './admin-modify/services/admin-fetch-current-mappings.service';
@@ -30,7 +30,10 @@ import { AdminFetchCurrentCompaniesService } from './services/admin-fetch-curren
 import { AdminDeleteMappingConfirmationComponent } from './admin-delete/admin-delete-mapping-confirmation/admin-delete-mapping-confirmation.component';
 import { AdminUserModifyPopupComponent } from './admin-modify/admin-user-modify-popup/admin-user-modify-popup.component';
 import { DataService } from './data.service';
-import {HomeService} from './home/services/home.service';
+import { HomeService } from './home/services/home.service';
+import { BankAdminNewCompanyService } from './bank-admin-new-company/services/bank-admin-new-company.service';
+import { BankAdminNewUserService } from './bank-admin-new-user/services/bank-admin-new-user.service';
+
 
 //slickgrid specifics
 import { AngularSlickgridModule } from 'angular-slickgrid';
@@ -50,8 +53,8 @@ import { LoaderComponent } from './loader/loader.component';
     NopageComponent,
     HeaderComponent,
     HomeComponent,
-    NewCompanyComponent,
-    NewRmComponent,
+    BankAdminNewCompanyComponent,
+    BankAdminNewUserComponent,
     LoginComponent,
     AdminModifyComponent,
     AdminUpdateMappingPopupComponent,
@@ -85,7 +88,8 @@ import { LoaderComponent } from './loader/loader.component';
   ],
   providers: [LoginService, AdminFetchCurrentMappingsService, AdminUserActionsService,
     AdminFetchCurrentUsersService, AdminFetchCurrentCompaniesService, AdminUserActionsService,
-    AdminCompaniesActionsService, BankRmManagePortfolioDetailsService, DataService, HomeService],
+    AdminCompaniesActionsService, BankRmManagePortfolioDetailsService, DataService, HomeService,
+    BankAdminNewCompanyService, BankAdminNewUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

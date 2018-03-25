@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewRmComponent } from './new-rm.component';
+import { BankAdminNewUserComponent } from './bank-admin-new-rm.component';
 
 describe('NewRmComponent', () => {
-  let component: NewRmComponent;
-  let fixture: ComponentFixture<NewRmComponent>;
+  let component: BankAdminNewUserComponent;
+  let fixture: ComponentFixture<BankAdminNewUserComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewRmComponent ]
+      declarations: [ BankAdminNewUserComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewRmComponent);
+    fixture = TestBed.createComponent(BankAdminNewUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
