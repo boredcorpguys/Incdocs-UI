@@ -6,3 +6,7 @@ input[type=file]{
 .middle{
     vertical-align: middle;
 }
+
+label{
+    display: -webkit-inline-box;
+}

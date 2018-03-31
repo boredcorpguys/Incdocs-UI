@@ -3,46 +3,24 @@
     <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" >
       <mat-expansion-panel-header>
         <mat-panel-title>
-          RM Bulk Upload
+          User Bulk Upload
         </mat-panel-title>
         <mat-panel-description>
-          Bulk Upload RM data as per template
-          <!--         We should probably give them like a template to understand how the format should be for upload -->
+          Bulk Upload User data as per template
         </mat-panel-description>
       </mat-expansion-panel-header>
 
-      <input-file #rmUpload></input-file>
+      <input-file #userUpload></input-file>
 
-      <button mat-button color="primary" class="pull-right">Download template</button>
+      <button mat-button color="primary" class="pull-right" (click)="downloadFile('BulkUsersUpload')" >Download template</button>
 
       <mat-action-row>  
-        <button mat-button color="primary" (click)="uploadFile(rmUpload.files);rmUpload.clear();">upload</button>
+        <button mat-button color="primary" (click)="uploadFile(userUpload.files,'BulkUsersUpload');userUpload.clear();">upload</button>
         <button mat-button color="primary" (click)="nextStep()">Next</button>
       </mat-action-row>
     </mat-expansion-panel>
 
     <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Middle Office Persons bulk upload
-        </mat-panel-title>
-        <mat-panel-description>
-          Please bulk upload Middle Office Persons as per template
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-
-      <input-file #mopUpload></input-file>
-
-      <button mat-button color="primary" class="pull-right">Download template</button>
-
-      <mat-action-row>
-        <button mat-button color="primary" (click)="uploadFile(mopUpload.files);mopUpload.clear();">upload</button>
-        <button mat-button color="warn" (click)="prevStep()">Previous</button>
-        <button mat-button color="primary" (click)="nextStep()">Next</button>
-      </mat-action-row>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Company bulk upload
@@ -54,36 +32,16 @@
 
       <input-file #companyUpload></input-file>
 
-      <button mat-button color="primary" class="pull-right">Download template</button>
+      <button mat-button color="primary" class="pull-right" (click)="downloadFile('BulkCompaniesUpload')" >Download template</button>
 
       <mat-action-row>
-        <button mat-button color="primary" (click)="uploadFile(companyUpload.files);companyUpload.clear();">upload</button>
-        <button mat-button color="warn" (click)="prevStep()">Previous</button>
-        <button mat-button color="primary" (click)="nextStep()">Next</button>
-      </mat-action-row>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Mapping bulk upload
-        </mat-panel-title>
-        <mat-panel-description>
-          Please bulk upload Mapping details as per the template
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-
-      <input-file #mappingsUpload></input-file>
-
-      <button mat-button color="primary" class="pull-right">Download template</button>
-
-      <mat-action-row>
-        <button mat-button color="primary" (click)="uploadFile(mappingsUpload.files);mappingsUpload.clear()">upload</button>
+        <button mat-button color="primary" (click)="uploadFile(companyUpload.files,'BulkCompaniesUpload');companyUpload.clear();">upload</button>
         <button mat-button color="warn" (click)="prevStep()">Previous</button>
         <button mat-button color="primary" (click)="nextStep()">End</button>
       </mat-action-row>
     </mat-expansion-panel>
 
-  </mat-accordion>
 
+  </mat-accordion>
+  <loader [loading]="loading"></loader>
 </div>

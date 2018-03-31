@@ -33,7 +33,7 @@ import { DataService } from './data.service';
 import { HomeService } from './home/services/home.service';
 import { BankAdminNewCompanyService } from './bank-admin-new-company/services/bank-admin-new-company.service';
 import { BankAdminNewUserService } from './bank-admin-new-user/services/bank-admin-new-user.service';
-
+import { BankAdminBulkUploadService } from './bank-admin-bulk-upload/services/bank-admin-bulk-upload.service';
 
 //slickgrid specifics
 import { AngularSlickgridModule } from 'angular-slickgrid';
@@ -89,7 +89,7 @@ import { LoaderComponent } from './loader/loader.component';
   providers: [LoginService, AdminFetchCurrentMappingsService, AdminUserActionsService,
     AdminFetchCurrentUsersService, AdminFetchCurrentCompaniesService, AdminUserActionsService,
     AdminCompaniesActionsService, BankRmManagePortfolioDetailsService, DataService, HomeService,
-    BankAdminNewCompanyService, BankAdminNewUserService],
+    BankAdminNewCompanyService, BankAdminNewUserService, BankAdminBulkUploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
