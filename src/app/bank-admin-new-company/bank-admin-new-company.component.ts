@@ -15,6 +15,7 @@ export class BankAdminNewCompanyComponent implements OnInit {
   companyName: string;
   panNumber: string;
   companyID: string;
+  ghID: string;
 
   matTooltipPosition: string;
   constructor(private service: BankAdminNewCompanyService, private snackBar: MatSnackBar, private data: DataService, private router: Router) {
@@ -25,8 +26,8 @@ export class BankAdminNewCompanyComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.companyName + this.panNumber + this.companyID);
-    this.service.createCompany(new CreateCompanyModel(this.companyName, this.companyID, this.panNumber)).subscribe((result)=>{
+    console.log(this.companyName + this.panNumber + this.companyID, this.ghID);
+    this.service.createCompany(new CreateCompanyModel(this.companyName, this.companyID, this.panNumber, this.ghID)).subscribe((result)=>{
       console.log(result);
       this.routeToHomePage();
     },(error)=>{

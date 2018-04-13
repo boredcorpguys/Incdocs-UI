@@ -10,8 +10,10 @@ export class BankAdminNewUserService {
 
   url: string;
   urlToCreateUser: string;
+  ghRoleID: number;
+  adminRoleID: number;
   constructor(private http: HttpClient, private data: DataService) {
-    this.url = '/incdocs/org/roles';
+    this.url = '/incdocs/company/roles';
     this.urlToCreateUser = '/incdocs/admin/create/user';
   }
 
@@ -23,13 +25,29 @@ export class BankAdminNewUserService {
     return this.http.post<CreateUserModel>(this.urlToCreateUser, model, this.data.httpOptions);
   }
 
+  setGHRoleIDAndAdminRoleID(roles: Array<UserRole>) {
+    roles.forEach((role) => {
+      if (role.roleName === 'GROUP_HEAD') {
+        this.ghRoleID = role.roleID;
+      }
+      else if (role.roleName === 'ADMIN') {
+        this.adminRoleID = role.roleID;
+      }
+    });
+  }
+
+  showGHInput(roleID: number): boolean {
+    return roleID && (roleID != this.ghRoleID) && (roleID != this.adminRoleID);
+  }
+
 }
 
 export class UserRole {
   roleID: number;
   roleName: string;
   description: string;
-
+  active: boolean;
+  client:boolean;
 }
 
 export class CreateUserModel{

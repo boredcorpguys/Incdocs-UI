@@ -46,7 +46,7 @@
       </span>
     </div>
 
-    <div class="row formInput" *ngIf="roleID != ghRoleID">
+    <div class="row formInput" [@showOrHideGroupHead]="showGHInput()" *ngIf="showGHInput()">
       <mat-form-field class="full-width">
         <input matInput type="text" placeholder="Group Head ID" value="" [(ngModel)]="ghID">
         <button mat-button *ngIf="ghID" matSuffix mat-icon-button aria-label="Clear" (click)="ghID=''">

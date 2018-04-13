@@ -37,6 +37,17 @@
     </mat-form-field>
   </div>
 
+  <div class="row formInput">
+    <mat-form-field class="full-width">
+      <input matInput type="text" placeholder="Group Head ID" value="" [(ngModel)]="ghID">
+      <button mat-button *ngIf="ghID" matSuffix mat-icon-button aria-label="Clear" (click)="ghID=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <span matTooltip="Enter Group head ID that this company belongs to" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+      <i class="material-icons">info</i>
+    </span>
+  </div>
 
   <div class="row formActions pull-right">
     <button mat-raised-button color="primary" (click)="submit()"> Submit </button>

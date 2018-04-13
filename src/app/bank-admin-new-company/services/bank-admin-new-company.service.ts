@@ -14,7 +14,7 @@ export class BankAdminNewCompanyService {
     this.httpOptions = this.data.httpOptions;
    }
 
-   createCompany(model: CreateCompanyModel){
+  createCompany(model: CreateCompanyModel){
     return this.http.post<CreateCompanyModel>(this.url, model, this.data.httpOptions);
    }
 
@@ -24,10 +24,11 @@ export class CreateCompanyModel{
   name: string;
   id: string;
   pan: string;
-
-  constructor(_name: string, _id:string, _pan:string){
+  ghID: string;
+  constructor(_name: string, _id:string, _pan:string, _ghID: string){
     this.name = _name;
     this.id = _id;
     this.pan = _pan;
+    this.ghID = _ghID;
   }
 }

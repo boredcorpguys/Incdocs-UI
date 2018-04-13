@@ -20,7 +20,7 @@ export class LoaderComponent implements OnInit {
   initLoaderConfig() {
     this.loaderConfig = {
       backdropBorderRadius: '14px',
-      animationType: ANIMATION_TYPES.threeBounce,
+      animationType: ANIMATION_TYPES.rectangleBounce ,
       fullScreenBackdrop: true
     };
   }

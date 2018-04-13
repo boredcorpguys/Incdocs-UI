@@ -29,6 +29,7 @@ import { InputFileComponent } from './util/input-file/input-file.component';
 import { AdminFetchCurrentCompaniesService } from './services/admin-fetch-current-companies.service';
 import { AdminDeleteMappingConfirmationComponent } from './admin-delete/admin-delete-mapping-confirmation/admin-delete-mapping-confirmation.component';
 import { AdminUserModifyPopupComponent } from './admin-modify/admin-user-modify-popup/admin-user-modify-popup.component';
+
 import { DataService } from './data.service';
 import { HomeService } from './home/services/home.service';
 import { BankAdminNewCompanyService } from './bank-admin-new-company/services/bank-admin-new-company.service';
@@ -45,6 +46,9 @@ import { BankRmManagePortfolioDetailsService } from './bank-rm-manage-portfolio/
 //loader specifics
 import { LoadingModule } from 'ngx-loading';
 import { LoaderComponent } from './loader/loader.component';
+
+//sub components
+import { BankAdminCreateNewUserPopupComponent } from './bank-admin-new-user/sub-components/bank-admin-create-new-user-popup/bank-admin-create-new-user-popup.component';
 
 
 @NgModule({
@@ -66,11 +70,12 @@ import { LoaderComponent } from './loader/loader.component';
     AdminUserModifyPopupComponent,
     GridComponent,
     BankRmManagePortfolioComponent,
-    LoaderComponent
+    LoaderComponent,
+    BankAdminCreateNewUserPopupComponent
   ],
   imports: [
-    BrowserAnimationsModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     AppMaterialDesignModule,
@@ -84,7 +89,8 @@ import { LoaderComponent } from './loader/loader.component';
     AdminDeleteConfirmationComponent,
     AdminDeleteMappingConfirmationComponent,
     AdminUpdateMappingPopupComponent,
-    AdminUserModifyPopupComponent
+    AdminUserModifyPopupComponent,
+    BankAdminCreateNewUserPopupComponent
   ],
   providers: [LoginService, AdminFetchCurrentMappingsService, AdminUserActionsService,
     AdminFetchCurrentUsersService, AdminFetchCurrentCompaniesService, AdminUserActionsService,

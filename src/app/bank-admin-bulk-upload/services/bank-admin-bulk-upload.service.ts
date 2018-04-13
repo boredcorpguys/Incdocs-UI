@@ -62,7 +62,6 @@ export class BankAdminBulkUploadService {
     //   responseType:'blob'
     // };
     let req = new HttpRequest("GET",url, httpOptions);
-    // return this.http.get(url, httpOptions);
     return this.http.request(req);
   }
 
