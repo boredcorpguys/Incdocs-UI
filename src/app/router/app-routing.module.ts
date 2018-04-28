@@ -15,7 +15,7 @@ import {BankRmManagePortfolioComponent} from '../bank-rm-manage-portfolio/bank-r
 const appRoutes: Routes = [
     { path: 'nopage', component: NopageComponent, outlet: 'popup' },
     { path: 'bank/admin/new-company', component: BankAdminNewCompanyComponent},
-    { path: 'bank/admin/new-rm', component: BankAdminNewUserComponent },
+    { path: 'bank/admin/new-user', component: BankAdminNewUserComponent },
     // { path: 'modify', component: AdminModifyComponent },
     // { path: 'delete', component: AdminDeleteComponent },
     { path: 'home', component: HomeComponent },

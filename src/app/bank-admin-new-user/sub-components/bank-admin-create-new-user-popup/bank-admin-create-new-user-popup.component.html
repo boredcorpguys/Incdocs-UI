@@ -1,17 +1,23 @@
 <h4 mat-dialog-title> New User created successfully!!</h4>
 <div mat-dialog-content>
   <p class="min-margin">New user created with following credentials: </p>
-  <div *ngIf="data && data.input && data.input.name">Employee ID: {{data.input.name}}</div>
-  <div>Incdocs ID: {{data.output}}</div>
-  <div>Role : {{data.input.roleID}}</div>
-  <div *ngIf="showGHSpecifics()">
-    GH ID: {{data.input.ghID}}
-  </div>
+  <mat-card>
+    <div class="indent-left">
+      <div *ngIf="data && data.input && data.input.name">Employee ID: {{data.input.name}}</div>
+      <div *ngIf="data && data.input && data.input.output">Incdocs ID: {{data.output}}</div>
+      <div *ngIf="data && data.input && data.input.roleID">Role : {{data.input.roleID}}</div>
+      <div *ngIf="showGHSpecifics()">
+        GH ID: {{data.input.ghID}}
+      </div>
+    </div>
+  </mat-card>
+  
+
   <p class="min-margin">
     Please ask the user to login to set the password.
   </p>
-  
+
 </div>
-<div mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="OK" >Ok</button>
+<div mat-dialog-actions >
+  <button mat-raised-button color="primary" [mat-dialog-close]="OK">Ok</button>
 </div>

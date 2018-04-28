@@ -1,27 +1,43 @@
 <div class="homePageActionsDiv" [@bounce]="bounce">
-  <div class="icon-holder"  routerLink="/bank/admin/new-company" routerLinkActive="active" *ngIf="showActionItem('CREATE_COMPANY')">
+  <!--   Admin specifics -->
+  <div class="icon-holder" routerLink="/bank/admin/new-company" routerLinkActive="active" *ngIf="showActionItem('CREATE_COMPANY')">
     <i class="material-icons icon-large" title="Create new Company">domain</i>
     <span class="title">Create new Company</span>
   </div>
-  <div class="icon-holder"  routerLink="/bank/admin/new-rm" routerLinkActive="active" *ngIf="showActionItem('CREATE_COMPANY')">
+  <div class="icon-holder" routerLink="/bank/admin/new-user" routerLinkActive="active" *ngIf="showActionItem('CREATE_COMPANY')">
     <i class="material-icons icon-large" title="Create new User">person_add</i>
     <span class="title"> Create new User</span>
   </div>
-  <div class="icon-holder"  routerLink="/bank/admin/bulk-upload" *ngIf="showActionItem('BULK_UPLOAD_MAPPINGS')">
+  <div class="icon-holder" routerLink="/bank/admin/bulk-upload" *ngIf="showActionItem('BULK_UPLOAD_MAPPINGS')">
     <i class="material-icons icon-large" title="Bulk Upload">file_upload</i>
     <span class="title"> Bulk Upload</span>
   </div>
-  <!-- <div class="icon-holder" routerLink="/modify">
-    <i class="material-icons icon-large" title="Modify Mapping">edit</i>
-    <span class="title"> Modify Mapping</span>
+
+  <!--  RM/ ARM specifics -->
+  <div class="icon-holder" routerLink="/bank/admin/bulk-upload" *ngIf="showActionItem('VIEW_STOCK_STATEMENT') || showActionItem('APPROVE_STOCK_STATEMENT') || showActionItem('REJECT_STOCK_STATEMENT')">
+    <i class="material-icons icon-large" title="Approve/ Reject Stock Statement">thumbs_up_down</i>
+    <span class="title"> Approve/Reject Stock Statement</span>
   </div>
-  <div class="icon-holder" routerLink="/modify">
-    <i class="material-icons icon-large" title="Multi Replace">compare_arrows</i>
-    <span class="title"> Multi Replace</span>
+
+  <div class="icon-holder" routerLink="/bank/admin/bulk-upload" *ngIf="showActionItem('VIEW_ANALYTICS')">
+    <i class="material-icons icon-large" title="View Analytics">insert_chart</i>
+    <span class="title"> Statement Analysis</span>
   </div>
-  <div class="icon-holder" routerLink="/delete">
-    <i class="material-icons icon-large" title="Delete RM ">delete</i>
-    <span class="title"> Delete</span>
+
+  <div class="icon-holder" routerLink="/bank/admin/bulk-upload" *ngIf="showActionItem('MANAGE_PORTFOLIO')">
+    <i class="material-icons icon-large" title="Manage Portfolio">people</i>
+    <span class="title"> Manage Portfolio</span>
+  </div>
+
+  <div class="icon-holder" routerLink="/bank/admin/bulk-upload" *ngIf="showActionItem('CHANGE_GH')">
+    <i class="material-icons icon-large" title="Change Group Head">swap_horiz</i>
+    <span class="title"> Change my Group Head</span>
+  </div>
+
+  <!-- <div class="icon-holder"  routerLink="/bank/admin/bulk-upload" *ngIf="showActionItem('REQUEST_COMPANY')">
+    <i class="material-icons icon-large" title="Bulk Upload">library_add</i>
+    <span class="title"> Bulk Upload</span>
   </div> -->
+
   <loader [loading]="loading"></loader>
   <div>

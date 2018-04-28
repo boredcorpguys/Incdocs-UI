@@ -12,11 +12,19 @@ export class DataService {
   public userEntitlements: UserEntitlements;
   constructor() { 
     this.endpoint = 'http://localhost:8080/incdocs/';
+    // this.httpOptions = {
+    //   headers: new HttpHeaders({
+    //     'Content-Type':  'application/json',
+    //     'Authorization': 'my-auth-token',
+    //     'incdocsID':"kkolhar1_icici123",
+    //     'password': "abac"
+    //   })
+    // };
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': 'my-auth-token',
-        'incdocsID':"kkolhar1_icici123",
+        'incdocsID':"rmane_icici123",
         'password': "abac"
       })
     };

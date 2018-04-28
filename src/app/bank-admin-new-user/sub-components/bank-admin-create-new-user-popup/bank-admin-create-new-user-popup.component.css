@@ -1,3 +1,7 @@
 .min-margin{
     margin: 10px;
 }
+
+.indent-left{
+    margin-left: 15px;
+}
