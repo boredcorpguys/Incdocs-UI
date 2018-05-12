@@ -1,0 +1,41 @@
+<mat-card class="grid-card">
+  <mat-card-header>
+    <mat-card-title>
+      <h2> Request a new company to your portfolio</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Advanced Search
+          </mat-panel-title>
+          <mat-panel-description>
+            Search based on any one of Company Name, Company PAN ID or Group Head Name
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div class="min-margin">
+          <mat-form-field>
+            <mat-select placeholder="Search Criteria" #searchValue>
+              <mat-option *ngFor="let search of searchCriteria" [value]="search.value">
+                {{ search.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="form-input">
+            <input matInput type="text" placeholder="Query String" value="" [(ngModel)]="queryString" >
+            <button mat-button *ngIf="queryString" matSuffix mat-icon-button aria-label="Clear" (click)="queryString=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <button mat-button (click)="fetchResultsBasedOnQuery(searchValue.value, queryString)">Query</button>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <!-- <grid [gridColumnDefinitions]="gridColumnDefinitions" [gridOptions]="gridOptionsWithCompanyGroup" [gridDataset]="gridDataset"
+          (onDataViewReady)="onDataViewReady($event)"></grid> -->
+  </mat-card-content>
+</mat-card>
