@@ -1,37 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Column, GridOption , Formatters, OnEventArgs} from 'angular-slickgrid';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { DeleteMappingConfirmationPopupComponent } from '../sub-components/delete-mapping-confirmation-popup/delete-mapping-confirmation-popup.component';
 
 @Injectable()
 export class BankRmManagePortfolioDetailsService {
   data: any;
-  constructor() { }
+  constructor( private dialog: MatDialog) { }
 
   fetchColumnDefinitions(): Column[] {
     let cols = [
       {id:'company', name: 'Company', field: 'company', sortable: true, filterable: true},
       {id:'arm', name: 'ARM', field: 'arm', sortable: true, filterable: true},
       {
-        id: 'delete', field: 'id', 
+        id: 'delete', field: 'id', name: "Delete Mapping",
         formatter: Formatters.deleteIcon,
         width:50,
-        onCellClick: (args: OnEventArgs) => {
-          // console.log(args);
-          args.dataView.deleteItem(args.dataContext.id);
-          //now make a backend call to actually delete the mapping
-          this.deleteMapping(args.dataContext);
-          args.grid.render();
-        }
+        onCellClick: this.deleteMapping
      }
     ];
     return cols;
 
     
-  }
-
-  deleteMapping(row : any): void {
-    //delete row based on id in it
-    console.log(row);
-
   }
 
   fetchDataset(): any[] {
@@ -56,4 +46,40 @@ export class BankRmManagePortfolioDetailsService {
 
   }
 
+  
+  takeConfirmation(data: DataRow):boolean{
+    let dialogRef = this.dialog.open(DeleteMappingConfirmationPopupComponent, {
+      width: '250px',
+      data: data
+    });
+    let confirmed :boolean;
+    dialogRef.afterClosed().subscribe(result => {
+      confirmed = result;
+    });
+    return confirmed;
+  }
+
+  deleteMapping(args: OnEventArgs){
+    // console.log(args);
+    let confirmed : boolean = this.takeConfirmation(args.dataContext);
+    if(confirmed){
+      //now make a backend call to actually delete the mapping
+      this.sendBackedCallToDeleteMapping(args.dataContext);
+      //make a call to backend to actually delete the mapping and on success, delete it from dataview
+      args.dataView.deleteItem(args.dataContext.id);
+    }
+    args.grid.render();
+  }
+
+  sendBackedCallToDeleteMapping(data: DataRow): boolean{
+  // make the actual backend call
+  return true;
+  }
+
+}
+
+export class DataRow{
+  id: number;
+  company:string;
+  arm:string;
 }

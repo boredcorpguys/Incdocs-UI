@@ -18,13 +18,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   imports: [MatButtonModule, BrowserAnimationsModule, MatInputModule, MatToolbarModule, MatIconModule, MatExpansionModule,
     MatTooltipModule, MatSnackBarModule, MatTabsModule, MatPaginatorModule, MatSortModule, MatTableModule, MatDialogModule,
-    MatListModule, MatStepperModule, MatCheckboxModule, MatCardModule, MatSelectModule],
+    MatListModule, MatStepperModule, MatCheckboxModule, MatCardModule, MatSelectModule, MatRadioModule],
   exports: [MatButtonModule, BrowserAnimationsModule, MatInputModule, MatToolbarModule, MatIconModule, MatExpansionModule,
     MatTooltipModule, MatSnackBarModule, MatTabsModule, MatPaginatorModule, MatSortModule, MatTableModule, MatDialogModule,
-    MatListModule, MatStepperModule, MatCheckboxModule, MatCardModule, MatSelectModule],
+    MatListModule, MatStepperModule, MatCheckboxModule, MatCardModule, MatSelectModule, MatRadioModule],
 })
 export class AppMaterialDesignModule { }

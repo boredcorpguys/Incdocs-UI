@@ -9,6 +9,12 @@
 
 .slick-viewport{
     overflow-x: hidden !important;
-    max-height: 75% !important;
+    max-height: 70% !important;
 }
+
+.min-margin{
+    margin:10px;
+}
+
+
 

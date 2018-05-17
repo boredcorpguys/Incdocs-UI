@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input , Output} from '@angular/core';
 import { Column, GridOption } from 'angular-slickgrid';
 import { Editors, Formatters, GridExtraUtils } from 'angular-slickgrid';
 import { MyGridOptions } from './models/MyGridOptions';
+import { EventEmitter } from '@angular/core';
 
 //3rd party libs
 
@@ -46,6 +47,8 @@ export class GridComponent implements OnInit {
   @Input()
   gridDataset: any[];
 
+  @Output() onDataViewReady = new EventEmitter<any>();
+
   @Input()
   gridID: any;
 
@@ -84,6 +87,7 @@ export class GridComponent implements OnInit {
   dataviewReady(dataview) {
     this.dataview = dataview;
     this.setGroupings();
+    this.onDataViewReady.emit(this.dataview);
   }
 
   setGroupings(){

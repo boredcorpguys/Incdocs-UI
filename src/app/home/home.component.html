@@ -24,9 +24,14 @@
     <span class="title"> Statement Analysis</span>
   </div>
 
-  <div class="icon-holder" routerLink="/bank/admin/bulk-upload" *ngIf="showActionItem('MANAGE_PORTFOLIO')">
+  <div class="icon-holder" routerLink="/bank/user/manage-portfolio" *ngIf="showActionItem('MANAGE_PORTFOLIO')">
     <i class="material-icons icon-large" title="Manage Portfolio">people</i>
     <span class="title"> Manage Portfolio</span>
+  </div>
+
+  <div class="icon-holder" routerLink="/bank/rm/request-new-company" *ngIf="showActionItem('REQUEST_COMPANY')">
+    <i class="material-icons icon-large" title="Change Group Head">location_city</i>
+    <span class="title"> Add a new Company to Portfolio</span>
   </div>
 
   <div class="icon-holder" routerLink="/bank/admin/bulk-upload" *ngIf="showActionItem('CHANGE_GH')">

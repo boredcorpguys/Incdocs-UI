@@ -49,6 +49,11 @@ import { LoaderComponent } from './loader/loader.component';
 
 //sub components
 import { BankAdminCreateNewUserPopupComponent } from './bank-admin-new-user/sub-components/bank-admin-create-new-user-popup/bank-admin-create-new-user-popup.component';
+import { DeleteMappingConfirmationPopupComponent } from './bank-rm-manage-portfolio/sub-components/delete-mapping-confirmation-popup/delete-mapping-confirmation-popup.component';
+
+import { BankRmAddMappingComponent } from './bank-rm-manage-portfolio/sub-components/bank-rm-add-mapping/bank-rm-add-mapping.component';
+import { BankRmRequestNewCompanyComponent } from './bank-rm-request-new-company/bank-rm-request-new-company.component';
+import { BankRmRequestNewCompanyService } from './bank-rm-request-new-company/services/bank-rm-request-new-company.service';
 
 
 @NgModule({
@@ -71,7 +76,10 @@ import { BankAdminCreateNewUserPopupComponent } from './bank-admin-new-user/sub-
     GridComponent,
     BankRmManagePortfolioComponent,
     LoaderComponent,
-    BankAdminCreateNewUserPopupComponent
+    BankAdminCreateNewUserPopupComponent,
+    DeleteMappingConfirmationPopupComponent,
+    BankRmRequestNewCompanyComponent,
+    BankRmAddMappingComponent
   ],
   imports: [
     BrowserModule,
@@ -90,12 +98,14 @@ import { BankAdminCreateNewUserPopupComponent } from './bank-admin-new-user/sub-
     AdminDeleteMappingConfirmationComponent,
     AdminUpdateMappingPopupComponent,
     AdminUserModifyPopupComponent,
-    BankAdminCreateNewUserPopupComponent
+    BankAdminCreateNewUserPopupComponent,
+    BankRmRequestNewCompanyComponent,
+    DeleteMappingConfirmationPopupComponent
   ],
   providers: [LoginService, AdminFetchCurrentMappingsService, AdminUserActionsService,
     AdminFetchCurrentUsersService, AdminFetchCurrentCompaniesService, AdminUserActionsService,
     AdminCompaniesActionsService, BankRmManagePortfolioDetailsService, DataService, HomeService,
-    BankAdminNewCompanyService, BankAdminNewUserService, BankAdminBulkUploadService],
+    BankAdminNewCompanyService, BankAdminNewUserService, BankAdminBulkUploadService, BankRmRequestNewCompanyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
