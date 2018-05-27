@@ -56,6 +56,7 @@ import { BankRmRequestNewCompanyComponent } from './bank-rm-request-new-company/
 import { BankRmRequestNewCompanyService } from './bank-rm-request-new-company/services/bank-rm-request-new-company.service';
 import { BankRmChangeGhComponent } from './bank-rm-change-gh/bank-rm-change-gh.component';
 import { GenericConfirmationPopupComponent } from './util/generic-confirmation-popup/generic-confirmation-popup.component';
+import { SearchBarComponent } from './util/search-bar/search-bar.component';
 
 
 @NgModule({
@@ -83,7 +84,8 @@ import { GenericConfirmationPopupComponent } from './util/generic-confirmation-p
     BankRmRequestNewCompanyComponent,
     BankRmAddMappingComponent,
     BankRmChangeGhComponent,
-    GenericConfirmationPopupComponent
+    GenericConfirmationPopupComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
