@@ -1,13 +1,29 @@
+import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-
+import { ANIMATION_TYPES } from 'ngx-loading';
 @Component({
-  selector: 'app-loader',
+  selector: 'loader',
   templateUrl: './loader.component.html',
   styleUrls: ['./loader.component.css']
 })
+
+
 export class LoaderComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  loading: boolean;
+  loaderConfig: any;
+  constructor() {
+    this.initLoaderConfig();
+  }
+
+  initLoaderConfig() {
+    this.loaderConfig = {
+      backdropBorderRadius: '14px',
+      animationType: ANIMATION_TYPES.rectangleBounce ,
+      fullScreenBackdrop: true
+    };
+  }
 
   ngOnInit() {
   }

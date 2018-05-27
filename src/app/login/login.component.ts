@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
         if (credentials.status === "ACTIVE") {
           this.loginService.setLoginStatus(LoginStatus.LOGGEDIN);
           this.data.userCredentials = credentials;
+          console.log(credentials);
           this.routeToHomePage();
         } else {
           this.loginService.setLoginStatus(LoginStatus.LOGINERROR);

@@ -60,6 +60,7 @@ export class User {
   companyID: string;
   status: string;
   client: string;
+  managerID: string;
 }
 
 export interface UserCredentials {

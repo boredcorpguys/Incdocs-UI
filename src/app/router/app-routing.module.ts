@@ -13,6 +13,7 @@ import { BankAdminBulkUploadComponent } from '../bank-admin-bulk-upload/bank-adm
 import { GridComponent } from '../grid/grid.component';
 import { BankRmManagePortfolioComponent } from '../bank-rm-manage-portfolio/bank-rm-manage-portfolio.component';
 import { BankRmRequestNewCompanyComponent } from '../bank-rm-request-new-company/bank-rm-request-new-company.component';
+import { BankRmChangeGhComponent } from '../bank-rm-change-gh/bank-rm-change-gh.component';
 
 const appRoutes: Routes = [
     { path: 'nopage', component: NopageComponent, outlet: 'popup' },
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
     { path: 'bank/admin/bulk-upload', component: BankAdminBulkUploadComponent },
     { path: 'bank/user/manage-portfolio', component: BankRmManagePortfolioComponent },
     { path: 'bank/rm/request-new-company', component: BankRmRequestNewCompanyComponent },
+    { path: 'bank/rm/change-grouphead', component: BankRmChangeGhComponent },
     { path: '', component: LoginComponent },
     { path: '**', component: NopageComponent }
 

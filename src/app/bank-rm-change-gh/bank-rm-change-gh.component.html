@@ -1,0 +1,40 @@
+<mat-card class="grid-card">
+  <mat-card-header>
+    <mat-card-title>
+      <h2> Change your group head</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="min-margin">
+    <div id="notes">
+      <p>
+        Group head changes require the approval of your current Group Head and the proposed new Group Head
+      </p>
+      <p>
+        <strong>Note: </strong>All your companies will be unmapped and you won't be able to see any data pertaining to those companies.
+        However Audit Trail will be maintained for all the actions taken by you on these companies.
+      </p>
+    </div>
+    <div id="changeRequest" class="min-margin">
+      <strong>Your current Group Head :</strong> {{currentGroupHead}}
+      <div id="newGH" class="formInput">
+        <strong>New Group Head : </strong>
+        <mat-form-field class="full-width min-margin-left">
+          <input matInput type="text" placeholder="Enter first 3 characters of Group Head Name" value="" [(ngModel)]="employeeName">
+          <button mat-button *ngIf="employeeName" matSuffix mat-icon-button aria-label="Clear" (click)="employeeName=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <span matTooltip="Enter Group Head name" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+          <i class="material-icons">info</i>
+        </span>
+      </div>
+    </div>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="change-gh-actions">
+      <button mat-raised-button color="primary" (click)="request()">Request</button>
+      <button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
+    </div>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,8 @@
+<h4 mat-dialog-title> {{data.headerMessage}}</h4>
+<div mat-dialog-content>
+  <p class="min-margin">{{data.bodyMessage}}</p>
+</div>
+<div mat-dialog-actions class="pull-right">
+  <button mat-raised-button color="primary" [mat-dialog-close]="true">Ok</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="false">Cancel</button>
+</div>

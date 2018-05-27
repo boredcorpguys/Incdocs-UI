@@ -7,10 +7,10 @@ import { UserEntitlements } from './home/services/home.service';
 export class DataService {
 
   public endpoint: string;
-  public httpOptions :any;
+  public httpOptions: any;
   public userCredentials: User;
   public userEntitlements: UserEntitlements;
-  constructor() { 
+  constructor() {
     this.endpoint = 'http://localhost:8080/incdocs/';
     // this.httpOptions = {
     //   headers: new HttpHeaders({
@@ -22,12 +22,24 @@ export class DataService {
     // };
     this.httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
+        'Content-Type': 'application/json',
         'Authorization': 'my-auth-token',
-        'incdocsID':"rmane_icici123",
+        'incdocsID': "rmane_icici123",
         'password': "abac"
       })
     };
+
+    this.userCredentials = {
+      incdocsID: "rmane_icici123",
+      empID: "rmane",
+      managerID: "vishnubot",
+      emailID: null,
+      name: "Rahul Mane",
+      roleID: "3",
+      companyID: "ICICI123",
+      status: "ACTIVE",
+      client: "false"
+    }
   }
 
 }

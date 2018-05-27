@@ -45,7 +45,7 @@ import { BankRmManagePortfolioDetailsService } from './bank-rm-manage-portfolio/
 
 //loader specifics
 import { LoadingModule } from 'ngx-loading';
-import { LoaderComponent } from './loader/loader.component';
+import { LoaderComponent } from './util/loader/loader.component';
 
 //sub components
 import { BankAdminCreateNewUserPopupComponent } from './bank-admin-new-user/sub-components/bank-admin-create-new-user-popup/bank-admin-create-new-user-popup.component';
@@ -54,6 +54,8 @@ import { DeleteMappingConfirmationPopupComponent } from './bank-rm-manage-portfo
 import { BankRmAddMappingComponent } from './bank-rm-manage-portfolio/sub-components/bank-rm-add-mapping/bank-rm-add-mapping.component';
 import { BankRmRequestNewCompanyComponent } from './bank-rm-request-new-company/bank-rm-request-new-company.component';
 import { BankRmRequestNewCompanyService } from './bank-rm-request-new-company/services/bank-rm-request-new-company.service';
+import { BankRmChangeGhComponent } from './bank-rm-change-gh/bank-rm-change-gh.component';
+import { GenericConfirmationPopupComponent } from './util/generic-confirmation-popup/generic-confirmation-popup.component';
 
 
 @NgModule({
@@ -79,7 +81,9 @@ import { BankRmRequestNewCompanyService } from './bank-rm-request-new-company/se
     BankAdminCreateNewUserPopupComponent,
     DeleteMappingConfirmationPopupComponent,
     BankRmRequestNewCompanyComponent,
-    BankRmAddMappingComponent
+    BankRmAddMappingComponent,
+    BankRmChangeGhComponent,
+    GenericConfirmationPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -100,7 +104,8 @@ import { BankRmRequestNewCompanyService } from './bank-rm-request-new-company/se
     AdminUserModifyPopupComponent,
     BankAdminCreateNewUserPopupComponent,
     BankRmRequestNewCompanyComponent,
-    DeleteMappingConfirmationPopupComponent
+    DeleteMappingConfirmationPopupComponent,
+    GenericConfirmationPopupComponent
   ],
   providers: [LoginService, AdminFetchCurrentMappingsService, AdminUserActionsService,
     AdminFetchCurrentUsersService, AdminFetchCurrentCompaniesService, AdminUserActionsService,

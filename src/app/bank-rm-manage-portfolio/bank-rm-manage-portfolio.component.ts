@@ -6,6 +6,7 @@ import { MatTabChangeEvent } from '@angular/material';
 import { MyGridOptions } from '../grid/models/MyGridOptions';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DeleteMappingConfirmationPopupComponent } from './sub-components/delete-mapping-confirmation-popup/delete-mapping-confirmation-popup.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bank-rm-manage-portfolio',
@@ -26,7 +27,8 @@ export class BankRmManagePortfolioComponent implements OnInit {
 
   deleteMappingConfig: any;
 
-  constructor(private dataService: BankRmManagePortfolioDetailsService, private dialog: MatDialog) { }
+  constructor(private dataService: BankRmManagePortfolioDetailsService, private dialog: MatDialog,
+    private router:Router) { }
 
   ngOnInit(): void {
 
@@ -98,10 +100,11 @@ export class BankRmManagePortfolioComponent implements OnInit {
   }
 
   requestNewCompany() {
-    //route programmatically to the other screen.
+    //route programmatically to the other screen. 
+    this.router.navigateByUrl('bank/rm/request-new-company');
   }
 
-  addNewMapping(){
+  addNewMapping() {
 
   }
 

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoaderComponent } from './loader.component';
+import { BankRmChangeGhComponent } from './bank-rm-change-gh.component';
 
-describe('LoaderComponent', () => {
-  let component: LoaderComponent;
-  let fixture: ComponentFixture<LoaderComponent>;
+describe('BankRmChangeGhComponent', () => {
+  let component: BankRmChangeGhComponent;
+  let fixture: ComponentFixture<BankRmChangeGhComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoaderComponent ]
+      declarations: [ BankRmChangeGhComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoaderComponent);
+    fixture = TestBed.createComponent(BankRmChangeGhComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
