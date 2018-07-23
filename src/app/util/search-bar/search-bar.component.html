@@ -1,3 +1,26 @@
-<p>
-  search-bar works!
-</p>
+<!-- <div id="search-bar" class="formInput">
+  <strong>New Group Head : </strong>
+  <mat-form-field class="full-width min-margin-left">
+    <input matInput type="text" placeholder="Enter first 3 characters of Group Head Name" value="" [(ngModel)]="queryString">
+    <button mat-button *ngIf="queryString" matSuffix mat-icon-button aria-label="Clear" (click)="queryString=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <span matTooltip="Enter Group Head name" [matTooltipPosition]="matTooltipPosition" class="tooltip-holder">
+    <i class="material-icons">info</i>
+  </span>
+</div> -->
+
+<form class="search-bar-form">
+  <mat-form-field class="full-width min-margin-left">
+    <input matInput placeholder="config.placeholder" aria-label="config.inputPlaceholder" [matAutocomplete]="auto" [formControl]="searchCtrl">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
+        <span>{{ option.name }}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <span matTooltip="config.tooltipText" [matTooltipPosition]="right" class="tooltip-holder">
+    <i class="material-icons">info</i>
+  </span>`
+</form>

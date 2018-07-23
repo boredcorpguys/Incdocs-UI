@@ -19,13 +19,17 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [MatButtonModule, BrowserAnimationsModule, MatInputModule, MatToolbarModule, MatIconModule, MatExpansionModule,
     MatTooltipModule, MatSnackBarModule, MatTabsModule, MatPaginatorModule, MatSortModule, MatTableModule, MatDialogModule,
-    MatListModule, MatStepperModule, MatCheckboxModule, MatCardModule, MatSelectModule, MatRadioModule],
+    MatListModule, MatStepperModule, MatCheckboxModule, MatCardModule, MatSelectModule, MatRadioModule, MatAutocompleteModule,
+    FormsModule, ReactiveFormsModule],
   exports: [MatButtonModule, BrowserAnimationsModule, MatInputModule, MatToolbarModule, MatIconModule, MatExpansionModule,
     MatTooltipModule, MatSnackBarModule, MatTabsModule, MatPaginatorModule, MatSortModule, MatTableModule, MatDialogModule,
-    MatListModule, MatStepperModule, MatCheckboxModule, MatCardModule, MatSelectModule, MatRadioModule],
+    MatListModule, MatStepperModule, MatCheckboxModule, MatCardModule, MatSelectModule, MatRadioModule, MatAutocompleteModule,
+    FormsModule, ReactiveFormsModule],
 })
 export class AppMaterialDesignModule { }
