@@ -1,21 +1,28 @@
 <!-- The button click should not directly redirect to home page. Instead it should validate the credentials and then should. -->
+<mat-card>
+    <!-- <video autoplay muted loop id="myVideo">
+        <source src="../../assets/videoplayback.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video> -->
+  <mat-card-content>
+    <div class="login-holder">
+      <h3 class="title"> Sign in to continue to Incdocs</h3>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Username" value="" [(ngModel)]="username">
+        <button mat-button *ngIf="username" matSuffix mat-icon-button aria-label="Clear" (click)="username=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
 
-<div class="login-holder">
-  <h3 class="title"> Sign in to continue to Incdocs</h3>
-  <mat-form-field class="full-width">
-    <input matInput placeholder="Username" value="" [(ngModel)]="username">
-    <button mat-button *ngIf="username" matSuffix mat-icon-button aria-label="Clear" (click)="username=''">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput type="password" placeholder="Password" value="" [(ngModel)]="password">
+        <button mat-button *ngIf="password" matSuffix mat-icon-button aria-label="Clear" (click)="password=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
 
-  <mat-form-field class="full-width">
-    <input matInput type="password" placeholder="Password" value="" [(ngModel)]="password">
-    <button mat-button *ngIf="password" matSuffix mat-icon-button aria-label="Clear" (click)="password=''">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
-
-  <button mat-raised-button color="primary"  (click)="login()"   class="btn btn-primary pull-right "> Login</button>
-  <loader [loading]="loading"></loader>
-</div>
+      <button mat-raised-button color="primary" (click)="login()" class="btn btn-primary pull-right "> Login</button>
+      <loader [loading]="loading"></loader>
+    </div>
+  </mat-card-content>
+</mat-card>
