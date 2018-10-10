@@ -107,7 +107,8 @@ import { SearchBarComponent } from './util/search-bar/search-bar.component';
     BankAdminCreateNewUserPopupComponent,
     BankRmRequestNewCompanyComponent,
     DeleteMappingConfirmationPopupComponent,
-    GenericConfirmationPopupComponent
+    GenericConfirmationPopupComponent,
+    BankRmAddMappingComponent
   ],
   providers: [LoginService, AdminFetchCurrentMappingsService, AdminUserActionsService,
     AdminFetchCurrentUsersService, AdminFetchCurrentCompaniesService, AdminUserActionsService,

@@ -7,6 +7,7 @@ import { MyGridOptions } from '../grid/models/MyGridOptions';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DeleteMappingConfirmationPopupComponent } from './sub-components/delete-mapping-confirmation-popup/delete-mapping-confirmation-popup.component';
 import { Router } from '@angular/router';
+import { BankRmAddMappingComponent } from './sub-components/bank-rm-add-mapping/bank-rm-add-mapping.component';
 
 @Component({
   selector: 'app-bank-rm-manage-portfolio',
@@ -105,7 +106,12 @@ export class BankRmManagePortfolioComponent implements OnInit {
   }
 
   addNewMapping() {
-
+    this.dialog.open(BankRmAddMappingComponent,{
+      width: '600px',
+      height: '550px',
+      hasBackdrop: true,
+      disableClose: false
+    });
   }
 
 
